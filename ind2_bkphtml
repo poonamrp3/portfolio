@@ -47,6 +47,19 @@
             color: #ffd700; /* yellow */
         }
 
+        #main > .container{
+			border-bottom: solid 2px #e5e5e5;
+			box-shadow: inset 0px -8px 0px 0px #fff, inset 0px -10px 0px 0px #e5e5e5;
+        }
+
+        /* Adjust the width of each education entry */
+        #education .col-6 {
+            width: 50%;
+            float: left;
+            padding-right: 15px; /* Add some spacing between the columns */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
+
         /* Clear floating elements */
         .row::after {
             content: "";
@@ -54,10 +67,28 @@
             display: table;
         }
 
+        .experience-entry {
+            background-color: #f8f8f8; /* Background color for each entry */
+            padding: 20px;
+            border-radius: 10px; /* Rounded corners */
+            margin-bottom: 20px; /* Spacing between entries */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+        
+        .experience-entry h3 {
+            font-size: 24px;
+            color: #333; /* Title color */
+            margin-bottom: 10px; /* Spacing below title */
+        }
+        
+        .experience-entry p {
+            font-size: 16px;
+            color: #666; /* Text color */
+            margin-bottom: 10px; /* Spacing between paragraphs */
+        }
         #header {
-            background-color: #eee;
+            background-color: #f4f4f4;
             padding: 20px 0;
-            height: 100vh;
         }
         
         #logo {
@@ -83,186 +114,27 @@
         .social-links img:hover {
             transform: scale(1.1);
         }        
-        /* CSS for View Resume Button */
-        .view-resume {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px; /* Adjust as needed */
-        }
-
-        .view-resume .btn {
-            padding: 10px 20px;
-            background-color: #ed786a; /* Button background color */
-            color: white; /* Button text color */
-            text-decoration: none; /* Remove underline */
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .view-resume .btn:hover {
-            background-color: #ed786a; /* Darker shade of the button color on hover */
-        }
-
-        /*experience section*/
-        #experience {
-            height: 100vh;
-            background-color: #fff;
-        }
-        .exp {
-            margin-bottom: 40px; /* Increased margin for better spacing */
-            position: relative; /* Position relative for dot positioning */
-            padding-left: 40px; /* Create space for dot and line */
-        }
-        .dot {
-            position: absolute;
-            top: 0;
-            left: -15px; /* Adjust position of the dot */
-            width: 10px; /* Diameter of the dot */
-            height: 10px; /* Diameter of the dot */
-            background-color: #ed786a; /* Color of the dot */
-            border-radius: 50%; /* Rounded shape for dot */
-            z-index: 1; /* Ensure dot appears above the line */
-        }
-        .line {
-            position: absolute;
-            top: 0;
-            left: -10px; /* Adjust position of the line */
-            width: 2px; /* Width of the line */
-            height: 100%; /* Height of the line (full height of the experience section) */
-            background-color: #ed786a; /* Color of the line */
-            z-index: 0; /* Ensure line appears behind dots */
-        }
-        .experience h3 {
-            margin-top: 0;
-            color: #ed786a; /* Color of the company/position name */
-        }
-        .experience .date {
-            font-weight: bold;
-            color: #555; /* Color of the date range */
-            margin-bottom: 10px;
-        }
-        .experience .position {
-            font-weight: bold;
-            color: #555; /* Color of the date range */
-            margin-bottom: 10px;
-        }
-        .experience ul {
-            list-style-type: none;
-            padding: 0;
-            margin-left: 20px; /* Adjust indentation of list items */
-        }
-        .experience ul li {
-            margin-bottom: 10px;
-        }
         
-        /*Education Section */
-        #education {
-            height: 100vh;
-            background: #eee;
-        }
-        .edu {
-            margin-bottom: 40px; /* Increased margin for better spacing */
-            position: relative; /* Position relative for dot positioning */
-            padding-left: 40px; /* Create space for dot and line */
-        }
-        .edu h3 {
-            margin-top: 0;
-            color: #ed786a; /* Color of the company/position name */
-        }
-        .edu .date {
-            font-weight: bold;
-            color: #555; /* Color of the date range */
-            margin-bottom: 10px;
-        }
-        .edu .position {
-            font-weight: bold;
-            color: #555; /* Color of the date range */
-            margin-bottom: 10px;
-        }
-        .edu ul {
-            list-style-type: none;
-            padding: 0;
-            margin-left: 20px; /* Adjust indentation of list items */
-        }
-        .edu ul li {
-            margin-bottom: 10px;
-        }
-
-        /*Skills Section */
-        #skills {
-            height: 100vh;
-            background-color: #fff;
-        }
-        
-        /*Projects Section*/
-        #projects{
-            height: 100vh;
-        }
-        .project-cards {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* Adjust as needed */
-        }
-    
-        .project-card {
-            width: calc(43% - 10px); /* Adjust width and margins for spacing */
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            padding: 20px;
-            background-color: #f9f9f9;
-        }
-    
-        .project-summary h3 {
-            margin-top: 0;
-        }
-    
-        .toggle-details {
-            background-color: #ed786a;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-            margin-top: 5px;
-        }
-    
-        .toggle-details:hover {
-            background-color: #ed786a;
-        }
-    
-        .project-details {
-            display: none;
-            margin-top: 10px;
-        }
-    
-        .project-details.show {
-            display: block;
-        }
-    
-        @media (max-width: 768px) {
-            .project-card {
-                width: 100%;
-            }
-        }
     </style>
 </head>
 <body class="homepage is-preload">
     <div id="page-wrapper">
         <div class="sidebar">
             <a class="icon solid fa-home" href="#header"><span> Introduction</span></a>
-            <a class="icon solid fa-cog" href="#experience"><span> Experience</span></a>
-            <a class="icon solid fa-envelope" href="#education"><span> Education</span></a>
             <a href="#skills" class="icon fa-chart-bar"><span> Skills</span></a>
+            <a class="icon solid fa-cog" href="#experience"><span> Experience</span></a>
             <a class="icon solid fa-retweet" href="#projects"><span> Projects</span></a>
             <a class="icon solid fa-sitemap" href="#contact"><span> Contact</span></a>
         </div>
 
         <!-- Content -->
         <div class="content">
-            <!-- Introduction -->
+            <!-- Header -->
             <section id="header">
                 <div class="container">
+                    <!-- Logo -->
                     <h1 id="logo"><a href="index.html">Hi, Poonam here</a></h1>
-                    <p>Welcome to my portfolio</p>
+                    <p>Welcome to my personal portfolio</p>
                     <!-- Social Media Links -->
                     <div class="social-links">
                         <a href="https://github.com/poonamrp3" target="_blank">
@@ -272,81 +144,9 @@
                             <img src="images/linkedin.png" alt="LinkedIn">
                         </a>
                     </div>
-                    <!-- Button for View Resume -->
-                    <div class="view-resume">
-                        <a href="https://github.com/poonamrp3/resume.pdf" target="_blank" class="btn">View Resume</a>
-                    </div>
                 </div>
             </section>
-            
-            <!-- Experience -->
-            <section id="experience">
-                <div class="container experience">
-                    <h2>Professional Experience</h2>
-                    <div class="exp">
-                        <span class="dot"></span>
-                        <span class="line"></span>
-                        <h3>Cex Webuy Entertainment Pvt. Ltd, India <span class="date text-right">Feb 2022 – Dec 2022</span></h3>
-                        <p class="position">Software Engineer</p>
-                        <ul>
-                            <li>Architected robust back-end features with C#, optimizing database interactions using Microsoft SQL and Google BigQuery, achieving a 40% performance boost.</li>
-                            <li>Engineered scalable RESTful APIs for real-time data exchange between Vue.js front-end and 385+ CEX stores, contributing to a 25% increase in sales conversion.</li>
-                            <li>Migrated front-end from ReactJS to Vue.js, enhancing user satisfaction and system performance by 20%.</li>
-                        </ul>
-                    </div>
-
-                    <div class="exp">
-                        <span class="dot"></span>
-                        <span class="line"></span>
-                        <h3>Accenture, India <span class="date text-right">Sep 2021 – Feb 2022</span></h3>
-                        <p class="position">Application Development Analyst</p>
-                        <ul>
-                            <li>Resolved technical inquiries and managed them via ServiceNow, reducing customer support issues by 40%.</li>
-                            <li>Established comprehensive performance analysis, leading to the implementation of caching mechanisms that improved application responsiveness by 60%.</li>
-                        </ul>
-                    </div>
-
-                    <div class="exp">
-                        <span class="dot"></span>
-                        <span class="line"></span>
-                        <h3>Pi Techniques Pvt Ltd, India <span class="date text-right">Jul 2019 – Sep 2021</span></h3>
-                        <p class="position">Software Developer</p>
-                        <ul>
-                            <li>Led development of web apps using ASP.NET MVC, improving UI/UX by 30% through unit testing.</li>
-                            <li>Optimized SQL queries and stored procedures, resulting in a 25% reduction in data processing time.</li>
-                            <li>Developed high-quality software solutions with C# and JavaScript, exceeding client expectations by 20% in functionality and user experience.</li>
-                        </ul>
-                    </div>
-
-                </div>
-            </section>
-            
-            <!-- Education -->
-            <section id="education">
-                <div class="container education">
-                    <h2>Education</h2>
-                    <div class="edu">
-                        <span class="dot"></span>
-                        <span class="line"></span>
-                        <h3>Rochester Institute of Technology, Rochester, NY</h3>
-                        <p><strong>M.S. in Computer Science</strong></p>
-                        <p>Jan 2023 - Expected Dec 2024</p>
-                        <p><strong style="color: rgb(174, 49, 24); font-style: italic;">Relevant Coursework:</strong> 
-                            <b style="font-weight: 600; color: #666;"> Foundation of Algorithms, Introduction to Big Data, Cloud Software Systems, Introduction to Artificial Intelligence</b>
-                        </p>
-                    </div>
-                    <div class="edu">
-                        <span class="dot"></span>
-                        <span class="line"></span>
-                        <h3>University of Mumbai, India</h3>
-                        <p><strong>Bachelor of Science in Information Technology</strong></p>
-                        <p>2016 - 2019</p>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Skills -->
-            <section id="skills">
+            <section id="skills" style="background-color: #ffffff;">
                 <header class="container">
                     <h2>Skills</h2>
                 </header>
@@ -425,92 +225,94 @@
                     </div>
                 </div>
             </section>
- 
-            <!-- Projects -->
+            <section id="education" style="background-color: #ffffff;">
+                <header class="container">
+                    <h2>Education</h2>
+                </header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <h3>Rochester Institute of Technology, Rochester, NY</h3>
+                            <p><strong>M.S. in Computer Science</strong></p>
+                            <p>Jan 2023 - Expected Dec 2024</p>
+                        </div>
+                        <div class="col-6">
+                            <h3>University of Mumbai, India</h3>
+                            <p><strong>Bachelor of Science in Information Technology</strong></p>
+                            <p>2016 - 2019</p>
+                        </div>
+                    </div>
+                </div>
+            </section>    
+            <section id="experience" style="background-color: #ffffff;">
+                <header class="container">
+                    <h2>Professional Experience</h2>
+                </header>
+                <div class="container">
+                    <div class="experience-entry">
+                        <h3>Cex Webuy Entertainment Pvt. Ltd, India</h3>
+                        <p><strong>Position:</strong> Software Engineer</p>
+                        <p>Feb 2022 – Dec 2022</p>
+                        <p>Architected, designed, and implemented robust back-end features utilizing C#; optimized database interactions with Microsoft SQL and Google BigQuery, causing a 40% reduction in overall system performance.</p>
+                        <p>Engineered and deployed scalable RESTful APIs to facilitate real-time data exchange between front-end (Vue JS) and over 385 CEX stores, resulting in enhanced user experience and increased sales conversion by 25%.</p>
+                    </div>
+                    <div class="experience-entry">
+                        <h3>Accenture, India</h3>
+                        <p><strong>Position:</strong> Application Development Analyst</p>
+                        <p>Sep 2021 – Feb 2022</p>
+                        <p>Resolved complex technical inquiries and troubleshooting issues, ensuring seamless user experience with application; managed end-user requests and incidents through ServiceNow application, generating a 40% downturn in customer support issues and elevated user satisfaction.</p>
+                        <p>Translated initial project briefs into high-quality software solutions, utilizing C# and JavaScript, resulting in successful project delivery and exceeding client expectations by 20% regarding functionality.</p> 
+                    </div>
+                    <div class="experience-entry">
+                        <h3>Pi Techniques Pvt Ltd, India</h3>
+                        <p><strong>Position:</strong> Software Developer</p>
+                        <p>Jul 2019 – Sep 2021</p>
+                        <p>Led the development of web applications using ASP.NET MVC framework, coordinated thorough testing and focus group sessions, leading to 30% improvement in overall UI/UX.</p>
+                        <p>Maximized database performance by designing, developing, and optimizing SQL queries and stored procedures, resulting in a 25% reduction in data processing time and boosted data accuracy.</p>
+                    </div>
+                </div>
+            </section>
+                    
             <section id="projects" style="background-color: #ffffff;">
                 <header class="container">
                     <h2>Projects</h2>
                 </header>
-                <div class="container project-cards">
-                    <div class="project-card">
-                        <div class="project-summary">
+                <div class="container">
+                    <ul>
+                        <li>
                             <h3>Which Celebrity Do You Look Like?</h3>
                             <p><strong>Skills:</strong> AWS Software as a Service</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
                             <p>Spearheaded the development of a cutting-edge celebrity lookalike image detection platform on AWS, leveraging Amazon Rekognition for facial recognition, resulting in a 20% accuracy enhancement.</p>
                             <p>Implemented Amazon S3 for efficient storage of user-uploaded photographs, achieving a remarkable 30% reduction in storage costs.</p>
                             <p>Integrated AWS Lambda for serverless computation, ensuring swift processing of image data and boosting platform scalability by 30%.</p>
                             <p>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</p>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <div class="project-summary">
-                            <h3>E-Commerce Platform</h3>
-                            <p><strong>Skills:</strong> ReactJS, Bootstrap, HTML, CSS</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
-                            <p>Developed an E-Commerce Platform using ReactJS, enabling users to register, log in, and browse products by categories, achieving 70% functionality completion.</p>
-                            <p>Enhanced the platform's visual appeal and user interface using advanced CSS techniques and Bootstrap, achieving 90% completion of UI/UX improvements.</p>
-                        </div>
-                    </div>
-            
-                    <div class="project-card">
-                        <div class="project-summary">
+                        </li>
+                        <li>
                             <h3>MyAnimeDB Insights</h3>
                             <p><strong>Skills:</strong> PostgreSQL, MongoDB, Big Data</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
                             <p>Revitalized the MyAnimeList dataset by migrating from PostgreSQL to a NoSQL MongoDB model, optimizing storage and retrieval processes and boosted system efficiency by 15%.</p>
-                            <p>Applied the Apriori algorithm to unveil noteworthy anime associations, genres, and seasonal trends, resulting in a substantial 20% improvement in the overall system accuracy.</p>           
-                        </div>
-                    </div>
-            
-                    <div class="project-card">
-                        <div class="project-summary">
+                            <p>Applied the Apriori algorithm to unveil noteworthy anime associations, genres, and seasonal trends, resulting in a substantial 20% improvement in the overall system accuracy.</p>
+                        </li>
+                        <li>
                             <h3>HYB-PARSIMONY Study</h3>
                             <p><strong>Skills:</strong> Machine learning, Python, Model Performance Analysis</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
                             <p>Successfully replicated the HYB-PARSIMONY algorithm, achieving a 25% reduction in feature set size while maintaining 98% of original performance.</p>
                             <p>Validated the algorithm with Python and diverse datasets, achieving a 30% decrease in model complexity with only a 2% loss in accuracy.</p>
-                        </div>
-                    </div>
-            
-                    <div class="project-card">
-                        <div class="project-summary">
+                        </li>
+                        <li>
                             <h3>OPEN-UNMIX - Music Separation by PyTorch (Associated with RIT)</h3>
-                            <p><strong>Skills:</strong> Machine learning, Python, Model Performance Analysis</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
                             <p>Streamlined Open-Unmix for better outcomes by fine-tuning hyperparameters, resulting in a 10% increase in accuracy for source separation, enabling more precise audio processing and production.</p>
                             <p>Conducted in-depth research analyzing the impact of batch size on audio source separation models; achieved a remarkable 70% reduction in loss with open-unmix4 compared to open-unmix3.</p>
-                        </div>
-                    </div>
-                   
-                    <div class="project-card">
-                        <div class="project-summary">
+                        </li>
+                        <li>
                             <h3>Blue Book for Bulldozers</h3>
                             <p><strong>Skills:</strong> Machine Learning, Python</p>
-                            <button class="toggle-details">Show Details</button>
-                        </div>
-                        <div class="project-details">
                             <p>Led a machine learning project achieving peak performance with a Random Forest Model (R^2 score: 0.9054) in predicting heavy machinery sale prices.</p>
                             <p>Implemented and documented the project, including the use of various models such as Random Forest, Gradient Boosting, and Linear Regression.</p>
-                       </div>
-                    </div>
-            
-                     
-            
+                        </li>
+                    </ul>
                 </div>
-            </section>
-                                            
+            </section>                                    
             <!-- Footer -->
             <section id="footer">
                 <div class="container">
@@ -596,20 +398,6 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleButtons = document.querySelectorAll(".toggle-details");
-    
-            toggleButtons.forEach(button => {
-                button.addEventListener("click", function() {
-                    const details = this.parentNode.nextElementSibling;
-                    details.classList.toggle("show");
-                    this.innerText = details.classList.contains("show") ? "Hide Details" : "Show Details";
-                });
-            });
-        });
-    </script>
-    
 
 </body>
 </html>
