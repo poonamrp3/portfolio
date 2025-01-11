@@ -17,7 +17,7 @@ form, label, legend, table, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
-section, summary, time, mark, audio, video {
+section, summary, time, mark, audio, video, sidebar {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -97,7 +97,7 @@ input, select, textarea {
 			transition: none !important;
 		}
 
-	body, input, textarea, select {
+	body, input, textarea, select, sidebar {
 		font-family: 'Source Sans Pro';
 		font-weight: 300;
 		color: #777;
@@ -118,8 +118,8 @@ input, select, textarea {
 	}
 
 	h2 {
-		font-size: 1.65em;
-		font-weight: 400;
+		font-size: 1.8em;
+		font-weight: 600;
 		letter-spacing: 4px;
 		margin: 0 0 1.5em 0;
 		line-height: 1.75em;
