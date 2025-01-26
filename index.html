@@ -384,9 +384,11 @@
                         <h3>Which Celebrity Do You Look Like?</h3>
                         <ul>
                             <li><strong>Skills&nbsp;:&nbsp; AWS, Python, Amazon S3, Vue JS (JavaScript Framework)</strong></li>
-                            <li>Spearheaded the development of a celebrity lookalike image detection platform on AWS, leveraging Amazon Rekognition for facial recognition, resulting in a 20% accuracy enhancement.</li>
-                            <li>Implemented Amazon S3 for efficient storage of user-uploaded photographs, achieving a remarkable 30% reduction in storage costs.</li>
-                            <li>Integrated AWS Lambda for serverless image processing and enhanced scalability, using API Gateway for seamless communication.</li>
+                            <li>Built a Vue.js frontend hosted on AWS Amplify, enabling users to upload images and receive 5 celebrity look-alike results using Amazon Rekognition for facial recognition.</li>
+                            <li>Implemented a serverless backend using AWS Lambda, API Gateway, S3, and DynamoDB for seamless image processing, storage, and real-time result retrieval.</li>
+                            <li>Created a Rekognition Collection to index and compare 160+ celebrity images, utilizing the `search_faces_by_image` API to retrieve top 5 matches with high accuracy.</li>
+                            <li>Leveraged AWS S3 for cost-efficient storage of user-uploaded and celebrity images, and DynamoDB for semi-structured storage of facial recognition results, ensuring efficient handling of dynamic data.</li>  
+                            <li>Configured IAM roles for secure communication between services and used CloudWatch for monitoring, logging, and debugging, ensuring robust performance and scalability.</li>
                             <li>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</li>
                         </ul>
                         <div class="view-resume">
@@ -411,8 +413,9 @@
                         <h3>OPEN-UNMIX - Music Separation by PyTorch</h3>
                         <ul>
                             <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
-                            <li> Streamlined Open-Unmix for better outcomes by fine-tuning hyperparameters, resulting in a 10% increase in accuracy for source separation.</li>
-                            <li>Conducted in-depth research analyzing the impact of batch size on audio source separation models; achieved a remarkable 70% reduction in loss with open-unmix4 compared to open-unmix3.</li>
+                            <li>Performance benchmarking of Open-Unmix demonstrated that increasing batch size and hidden size does not always reduce loss or accelerate training.</li>
+                            <li>The Open-Unmix model with a larger batch size of 16 and hidden size of 512 had a higher loss of 11.2, compared to Open-Unmix2 with a smaller batch size of 4 and hidden size of 256, which achieved a lower loss of 8.55.</li>
+                            <li>Analysis indicated that a hidden size of 256 was optimal for processing 16KHz signals in the Open-Unmix model. Increasing hidden size beyond this point led to decreased performance due to overfitting, as the model began to capture very subtle frequency patterns.</li>
                         </ul>
                         <div class="view-resume">
                             <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" class="btn">View Details</a>
@@ -424,8 +427,9 @@
                         <h3>HYB-PARSIMONY Study</h3>
                         <ul>
                             <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
-                            <li>Successfully replicated the HYB-PARSIMONY algorithm, achieving a 25% reduction in feature set size while maintaining 98% of original performance.</li>
-                            <li>Validated the algorithm on diverse datasets, achieving a 30% decrease in model complexity with only a 2% loss in accuracy.</li>
+                            <li>Successfully replicated and optimized GA, PSO, and HYB-Parsimony algorithms by integrating artificial features to evaluate the model's ability to differentiate between relevant (original) features.</li>
+                            <li>The Hybrid Algorithm achieved an accuracy of 80% to 100%, selecting only 63.8% of the original features across all datasets. This represents a reduction of about 36.2% in feature dimensionality, with 29% of artificial features being chosen. </li>
+                            <li>The Genetic Algorithm maintained an accuracy of 86% to 87%, selecting only 47% of the original features, with a 28% rate of artificial features chosen.</li>
                         </ul>
                     </div>
 
@@ -433,10 +437,13 @@
                         <h3>Market Basket Analysis</h3>
                         <ul>
                             <li><strong>Skills&nbsp;:&nbsp;Python, Big Data Analytics, Neo4j, Pandas</strong></li>
-                            <li>Developed an ETL pipeline for processing 7 retail attributes across 10 countries, leveraging pandas for data cleaning and TransactionEncoder for one-hot encoding.</li>
-                            <li>Led analysis with FP-Growth, generating 266 association rules for Norway and identifying high-value patterns like 97% support for postage in Belgium.</li>
-                            <li>Architected Neo4j graph database solution, integrating custom transaction functions to model product associations. Designed directed graph visualizations to represent association rules with metrics.</li>
+                            <li>Led data preprocessing in python and transformation initiatives, implementing one-hot encoding techniques to optimize data for frequent pattern mining analysis.</li>
+                            <li>Uncovered significant data patterns through frequent itemset mining, analyzing 1,000+ rows of cross-country data, revealing contrasts in pattern frequency (142 patterns in Norway vs. 2 in UK from similar data volumes).</li>
+                            <li>Designed and implemented a Neo4j graph database solution for knowledge representation, utilizing Cypher queries to enhance data analysis capabilities and scalability.</li>
                         </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" class="btn">View Details</a>
+                        </div>
                     </div>
                 </div>
             </section>
