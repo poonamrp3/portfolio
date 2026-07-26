@@ -1,9 +1,10 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 <head>
     <title>Home - My Portfolio</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Portfolio of Poonam Pawar, a software engineer specializing in full-stack development, cloud systems, and machine learning." />
     <link rel="stylesheet" href="assets/css/main.css" />
     <style>
         .sidebar {
@@ -269,37 +270,102 @@
         #contacts {
             height: 100vh;
         }
+
+        /* Modern portfolio refresh */
+        :root { --ink: #151122; --muted: #635d70; --paper: #fcfbff; --plum: #5b21b6; --violet: #7c3aed; --line: #e7e1ee; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .sidebar { box-sizing: border-box; display: flex; flex-direction: column; gap: 1.5rem; width: 248px; padding: 2.25rem 1.5rem; background: #1d1233; }
+        .sidebar .brand { color: #fff; font-size: 1.15rem; font-weight: 800; letter-spacing: .02em; margin: 0 0 .5rem; }
+        .sidebar .brand span { color: #c4b5fd; display: block; font-size: .78rem; font-weight: 500; margin-top: .35rem; }
+        .sidebar nav { display: grid; gap: .35rem; }
+        .sidebar a { border-radius: .5rem; color: #ddd6fe; font-size: .8rem; font-weight: 700; letter-spacing: .08em; padding: .75rem .85rem; text-transform: uppercase; }
+        .sidebar a:hover, .sidebar a:focus-visible { background: rgba(255,255,255,.12); color: #fff; outline: 0; }
+        .menu-toggle { display: none; }
+        .content { margin-left: 248px; padding: 0; }
+        section { box-sizing: border-box; margin: 0; padding: 5.5rem clamp(1.5rem, 5vw, 5rem); }
+        #header, #education, #skills, #contacts { height: auto; min-height: 0; }
+        #header { background: linear-gradient(135deg, #f5f0ff 0%, #fff 62%); display: grid; min-height: min(700px, 100vh); place-items: center; }
+        #header .container { align-items: flex-start; gap: 1.5rem; max-width: 900px; width: 100%; }
+        #logo, #logo a { color: var(--ink); font-size: clamp(2.8rem, 7vw, 5.5rem); letter-spacing: -.06em; line-height: .95; }
+        #logo a::after { color: var(--plum); content: "."; }
+        .eyebrow { color: var(--plum); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+        .hero-copy { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.7; max-width: 46rem; }
+        .social-links { display: flex; gap: .5rem; margin-top: .5rem; }
+        .social-links a { background: #fff; border: 1px solid var(--line); border-radius: .75rem; margin: 0; padding: .55rem; }
+        .social-links img { height: 26px; width: 26px; }
+        .view-resume { justify-content: flex-start; margin-top: 1rem; }
+        .view-resume .btn { background: var(--plum); border-radius: .6rem; font-weight: 750; padding: .85rem 1.15rem; }
+        .view-resume .btn:hover { background: #43148d; }
+        #experience { background: #fff; }
+        .container { gap: 1.75rem; max-width: 1050px; }
+        h2 { color: var(--ink); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; text-transform: none; }
+        .exp, .edu { border-left: 2px solid #ddd6fe; margin: 0; padding: 0 0 2rem 2rem; }
+        .exp:last-child, .edu:last-child { padding-bottom: 0; }
+        .exp .dot, .edu .dot { left: -6px; top: .4rem; }
+        .exp .line, .edu .line { display: none; }
+        .experience h3, .edu h3 { color: var(--ink); font-size: 1.25rem; }
+        .experience .date, .edu .date { color: var(--plum) !important; float: none; font-size: .9rem; position: static; transform: none; }
+        #education { background: #f6f3fa; }
+        #projects { background: #fff !important; }
+        #projects > .container:last-child { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .project-card { border: 1px solid var(--line); box-shadow: none; display: flex; flex-direction: column; margin: 0; padding: 1.5rem; }
+        .project-card:hover { border-color: #bca8eb; box-shadow: 0 16px 35px rgba(67, 20, 141, .09); transform: translateY(-4px); }
+        .project-card h3 { color: var(--ink); font-size: 1.25rem; }
+        .project-card ul { color: var(--muted); font-size: .95rem; line-height: 1.55; margin: 0; padding-left: 1.15rem; }
+        .project-card .view-resume { margin-top: auto; }
+        #skills { background: #1d1233; color: #e9e3f5; }
+        #skills h2, #skills h3 { color: #fff; text-align: left; }
+        #skills .container > .row { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        #skills .col-6 { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: .75rem; padding: 1.25rem; }
+        .rating { font-size: 1.05rem; }
+        #contacts { background: #f6f3fa; }
+        #contacts a { color: var(--plum); }
+        @media (max-width: 800px) {
+            .sidebar { align-items: center; flex-direction: row; height: 64px; justify-content: space-between; padding: .75rem 1rem; position: fixed; width: 100%; z-index: 10002; }
+            .sidebar .brand { font-size: 1rem; margin: 0; }.sidebar .brand span { display: none; }
+            .menu-toggle { background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: .45rem; color: #fff; cursor: pointer; display: block; font-size: 1rem; padding: .38rem .6rem; }
+            .sidebar nav { background: #1d1233; display: none; left: 0; padding: 1rem; position: absolute; right: 0; top: 64px; }.sidebar.is-open nav { display: grid; }
+            .content { margin-left: 0; padding-top: 64px; } section { padding: 3.5rem 1.25rem; }
+            #header { min-height: calc(100vh - 64px); } #skills .container > .row { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body class="homepage is-preload">
     <div id="page-wrapper">
-        <div class="sidebar">
-            <a href="#header"><span> INTRODUCTION</span></a>
-            <a href="#experience"><span> EXPERIENCE</span></a>
-            <a href="#education"><span> EDUCATION</span></a>
-            <a href="#projects"><span> PROJECTS</span></a>
-            <a href="#skills"><span> SKILLS</span></a>
-            <a href="#contacts"><span> CONTACT</span></a>
-        </div>
+        <aside class="sidebar" aria-label="Primary navigation">
+            <p class="brand">Poonam Pawar<span>Software Engineer</span></p>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
+                <a href="#header">Introduction</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contacts">Contact</a>
+            </nav>
+        </aside>
 
         <!-- Content -->
         <div class="content">
             <!-- Introduction -->
             <section id="header">
                 <div class="container">
-                    <h1 id="logo"><a href="index.html">Hi, Poonam here</a></h1>
+                    <p class="eyebrow">Software engineer · Cloud &amp; data systems</p>
+                    <h1 id="logo"><a href="index.html">Poonam Pawar</a></h1>
+                    <p class="hero-copy">I build reliable, user-centered software—from polished web experiences to cloud-native data and machine-learning systems.</p>
                     <!-- Social Media Links -->
                     <div class="social-links">
-                        <a href="https://github.com/poonamrp3" target="_blank">
+                        <a href="https://github.com/poonamrp3" target="_blank" rel="noopener noreferrer">
                             <img src="images/Github.png" alt="GitHub">
                         </a>
-                        <a href="https://www.linkedin.com/in/prp3/" target="_blank">
+                        <a href="https://www.linkedin.com/in/prp3/" target="_blank" rel="noopener noreferrer">
                             <img src="images/linkedin.png" alt="LinkedIn">
                         </a>
                     </div>
                     <!-- Button for View Resume -->
                     <div class="view-resume">
-                        <a href="https://drive.google.com/file/d/1QmqkYmD2VxYa_kVACMEsAC63_hMs62Cv/view?usp=sharing" target="_blank" class="btn">View Resume</a>
+                        <a href="https://drive.google.com/file/d/1QmqkYmD2VxYa_kVACMEsAC63_hMs62Cv/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Resume</a>
                     </div>
                 </div>
             </section>
@@ -392,7 +458,7 @@
                             <li>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</li>
                         </ul>
                         <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1aqB5B2ORWPux8-P2YX31ZvV6N0JGPF1p/view?usp=share_link" target="_blank" class="btn">View Details</a>
+                            <a href="https://drive.google.com/file/d/1aqB5B2ORWPux8-P2YX31ZvV6N0JGPF1p/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
                         </div>
                     </div>
                     <div class="project-card">
@@ -406,7 +472,7 @@
                             <li>Demonstrated PSO's capability to navigate complex, high-dimensional search spaces for both structural parameters (neuron counts) and non-structural parameters (weights and biases).</li>
                         </ul>
                         <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/13iwZmsG7PGxZmn42g5xtxI0_MoF7U7b0/view?usp=sharing" target="_blank" class="btn">View Details</a>
+                            <a href="https://drive.google.com/file/d/13iwZmsG7PGxZmn42g5xtxI0_MoF7U7b0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
                         </div>
                     </div>
                     
@@ -414,12 +480,13 @@
                         <h3>AnimeDB Insights</h3>
                         <ul>
                             <li><strong>Skills&nbsp;:&nbsp;SQL, PostgreSQL, MongoDB, ETL, Python, Pandas, Big Data Analytics</strong></li>
-                            <li>Led database normalization and ETL pipeline development for an 80M-record anime dataset using Python Pandas and SQL, achieving 20% average data quality improvement through systematic detection and removal of duplicates, null values, and outliers.
+                            <li>Led database normalization and ETL pipeline development for an 80M-record anime dataset using Python Pandas and SQL, achieving 20% average data quality improvement through systematic detection and removal of duplicates, null values, and outliers.</li>
                             <li>Engineered data cleaning protocols in Python to optimize dataset quality, resulting in refined datasets with 29.8% improvement in user records, 20.9% in user-anime interactions, and 12% in anime listings through IQR outlier detection algorithm.</li>
                             <li>Designed and implemented MongoDB document models for optimized data relationships, integrating referential integrity constraints and functional dependencies to achieve Third Normal Form in a NoSQL environment.</li>
                             <li>Applied frequent itemset mining algorithm (Apriori) using Python to analyze viewing patterns and content trends, uncovering critical business insights including the identification that 25.72% of anime content consisted of original creations.</li>
+                        </ul>
                         <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1GfSIo-XwDrPbVi0BZTeF1kS7z20ULngp/view?usp=share_link" target="_blank" class="btn">View Details</a>
+                            <a href="https://drive.google.com/file/d/1GfSIo-XwDrPbVi0BZTeF1kS7z20ULngp/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
                         </div>
                     </div>
                                             
@@ -432,7 +499,7 @@
                             <li>Analysis indicated that a hidden size of 256 was optimal for processing 16KHz signals in the Open-Unmix model. Increasing hidden size beyond this point led to decreased performance due to overfitting, as the model began to capture very subtle frequency patterns.</li>
                         </ul>
                         <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" class="btn">View Details</a>
+                            <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
                         </div>
                     </div>
 
@@ -456,7 +523,7 @@
                             <li>Designed and implemented a Neo4j graph database solution for knowledge representation, utilizing Cypher queries to enhance data analysis capabilities and scalability.</li>
                         </ul>
                         <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" class="btn">View Details</a>
+                            <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
                         </div>
                     </div>
                     
@@ -571,7 +638,7 @@
                                                 (585) 445-0229
                                             </li>
                                             <li class="icon solid fa-envelope">
-                                                <a href="#">pp1549@g.rit.edu</a>
+                                                <a href="mailto:pp1549@g.rit.edu">pp1549@g.rit.edu</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -583,23 +650,19 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const toggleButtons = document.querySelectorAll(".toggle-details");
-    
-            toggleButtons.forEach(button => {
-                button.addEventListener("click", function() {
-                    const details = this.parentNode.nextElementSibling;
-                    details.classList.toggle("show");
-                    this.innerText = details.classList.contains("show") ? "Hide Details" : "Show Details";
-                });
+        const sidebar = document.querySelector('.sidebar');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = sidebar.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.querySelectorAll('#site-nav a').forEach((link) => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
             });
         });
     </script>
