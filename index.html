@@ -43,10 +43,6 @@
         section#header {
             margin-top: 0; /* Ensure there's no top margin on the header */
         }
-        .rating {
-            font-size: 24px;
-            color: #ffd700; /* yellow */
-        }
 
         /* Clear floating elements */
         .row::after {
@@ -212,12 +208,6 @@
             margin-bottom: 10px;
         }
 
-        /*Skills Section */
-        #skills {
-            height: 100vh;
-            background-color: #fff;
-        }
-        
         /* Projects Section */
         #projects {
             padding: 50px 20px;
@@ -284,7 +274,7 @@
         .menu-toggle { display: none; }
         .content { margin-left: 248px; padding: 0; }
         section { box-sizing: border-box; margin: 0; padding: 5.5rem clamp(1.5rem, 5vw, 5rem); }
-        #header, #education, #skills, #contacts { height: auto; min-height: 0; }
+        #header, #education, #contacts { height: auto; min-height: 0; }
         #header { background: linear-gradient(135deg, #f5f0ff 0%, #fff 62%); display: grid; min-height: min(700px, 100vh); place-items: center; }
         #header .container { align-items: flex-start; gap: 1.5rem; max-width: 900px; width: 100%; }
         #logo, #logo a { color: var(--ink); font-size: clamp(2.8rem, 7vw, 5.5rem); letter-spacing: -.06em; line-height: .95; }
@@ -314,11 +304,6 @@
         .project-card h3 { color: var(--ink); font-size: 1.25rem; }
         .project-card ul { color: var(--muted); font-size: .95rem; line-height: 1.55; margin: 0; padding-left: 1.15rem; }
         .project-card .view-resume { margin-top: auto; }
-        #skills { background: #1d1233; color: #e9e3f5; }
-        #skills h2, #skills h3 { color: #fff; text-align: left; }
-        #skills .container > .row { display: grid; gap: 1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        #skills .col-6 { background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1); border-radius: .75rem; padding: 1.25rem; }
-        .rating { font-size: 1.05rem; }
         #contacts { background: #f6f3fa; }
         #contacts a { color: var(--plum); }
         @media (max-width: 800px) {
@@ -327,7 +312,7 @@
             .menu-toggle { background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: .45rem; color: #fff; cursor: pointer; display: block; font-size: 1rem; padding: .38rem .6rem; }
             .sidebar nav { background: #1d1233; display: none; left: 0; padding: 1rem; position: absolute; right: 0; top: 64px; }.sidebar.is-open nav { display: grid; }
             .content { margin-left: 0; padding-top: 64px; } section { padding: 3.5rem 1.25rem; }
-            #header { min-height: calc(100vh - 64px); } #skills .container > .row { grid-template-columns: 1fr; }
+            #header { min-height: calc(100vh - 64px); }
         }
 
         /* Profile-style layout: concise, text-first, and easy to scan. */
@@ -357,7 +342,7 @@
         .view-resume .btn { background: transparent; border: 1px solid #a8c6df; border-radius: .2rem; color: var(--plum); font-family: Arial, sans-serif; font-size: .85rem; padding: .6rem .85rem; }
         .view-resume .btn:hover { background: #edf5fb; }
         h2 { color: #202020; font-family: Georgia, "Times New Roman", serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -.01em; text-transform: none; }
-        #experience, #education, #projects, #skills, #contacts { background: #fff !important; color: var(--ink); }
+        #experience, #education, #projects, #contacts { background: #fff !important; color: var(--ink); }
         .exp, .edu { border-left: 0; border-top: 1px solid var(--line); padding: 1.35rem 0; }
         .exp .dot, .edu .dot, .exp .line, .edu .line { display: none; }
         .experience h3, .edu h3, .project-card h3 { color: #222; font-family: Arial, sans-serif; font-size: 1rem; font-weight: 700; }
@@ -367,10 +352,6 @@
         .project-card:hover { border-color: var(--line); box-shadow: none; transform: none; }
         .project-card ul { font-size: 1rem; }
         .project-card .view-resume { margin-top: 1rem; }
-        #skills .container > .row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
-        #skills .col-6 { background: transparent; border: 0; border-radius: 0; border-top: 1px solid var(--line); padding: 1rem 0; }
-        #skills h2, #skills h3 { color: var(--ink); text-align: left; }
-        .rating { color: #1769aa; font-size: .9rem; }
         #contacts { border-top: 1px solid var(--line); }
         @media (max-width: 800px) {
             .sidebar { background: #fff; border-bottom: 1px solid var(--line); border-right: 0; padding: .75rem 1rem; width: 100%; }
@@ -379,7 +360,6 @@
             .sidebar nav { background: #fff; border-top: 1px solid var(--line); padding: .75rem 1rem; }
             .sidebar nav a { padding: .5rem 0; }.content { margin-left: 0; }
             section { padding: 2.5rem 1.4rem; } #header { padding-top: 3rem; }
-            #skills .container > .row { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -389,7 +369,7 @@
             <div class="profile-mark" aria-hidden="true">PP</div>
             <p class="brand">Poonam Pawar<span>Software Engineer</span></p>
             <div class="profile-links">
-                <a href="mailto:pp1549@g.rit.edu">Email</a>
+                <a href="mailto:poonamrp3@gmail.com">Email</a>
                 <a href="https://www.linkedin.com/in/prp3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                 <a href="https://github.com/poonamrp3" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
@@ -399,7 +379,6 @@
                 <a href="#experience">Experience</a>
                 <a href="#education">Education</a>
                 <a href="#projects">Projects</a>
-                <a href="#skills">Skills</a>
                 <a href="#contacts">Contact</a>
             </nav>
         </aside>
@@ -597,86 +576,6 @@
                 </div>
             </section>
             
-            <!-- Skills -->
-            <section id="skills">
-                <header class="container">
-                    <h2>Skills</h2>
-                </header>
-                <div class="container">
-                    <div class="row">
-                        <div class="col-6">
-                            <h3>Programming Languages (Object Oriented)</h3>
-                            <ul>
-                                <li>
-                                    <strong>C#:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                                <li>
-                                    <strong>Java:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                                <li>
-                                    <strong>Python:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                                <li>
-                                    <strong>JavaScript:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <h3>Frontend Technologies</h3>
-                            <ul>
-                                <li>
-                                    <strong>HTML:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                                <li>
-                                    <strong>CSS:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                                <li>
-                                    <strong>BootStrap:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                                <li>
-                                    <strong>ReactJS:</strong> <span class="rating">★★★☆☆</span>
-                                </li>
-                                <li>
-                                    <strong>Vue.js:</strong> <span class="rating">★★★☆☆</span>
-                                </li>
-                                <li>
-                                    <strong>jQuery:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-6">
-                            <h3>Database Technologies</h3>
-                            <ul>
-                                <li>
-                                    <strong>Microsoft SQL:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                                <li>
-                                    <strong>RDBMS:</strong> <span class="rating">★★★★☆</span>
-                                </li>
-                                <li>
-                                    <strong>MongoDB:</strong> <span class="rating">★★★☆☆</span>
-                                </li>
-                                <li>
-                                    <strong>PostgreSQL:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-6">
-                            <h3>Other Tools</h3>
-                            <ul>
-                                <li>
-                                    <strong>Github:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                                <li>
-                                    <strong>AWS:</strong> <span class="rating">★★★★★</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>                        
             <!-- Footer -->
             <section id="contacts">
                 <div class="container">
@@ -693,10 +592,10 @@
                                                 USA
                                             </li>
                                             <li class="icon solid fa-phone">
-                                                (585) 445-0229
+                                                +91 9594629523
                                             </li>
                                             <li class="icon solid fa-envelope">
-                                                <a href="mailto:pp1549@g.rit.edu">pp1549@g.rit.edu</a>
+                                                <a href="mailto:poonamrp3@gmail.com">poonamrp3@gmail.com</a>
                                             </li>
                                         </ul>
                                     </div>
