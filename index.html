@@ -319,7 +319,7 @@
         :root { --ink: #252525; --muted: #5f6368; --paper: #fff; --plum: #1769aa; --line: #e5e7eb; }
         body { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
         .sidebar { background: #fafafa; border-right: 1px solid var(--line); box-shadow: none; gap: 1.1rem; padding: 3rem 2rem; width: 300px; }
-        .profile-mark { align-items: center; background: #e7f0f8; border: 1px solid #c9dcec; border-radius: 50%; color: #1769aa; display: flex; font-family: Arial, sans-serif; font-size: 1.7rem; font-weight: 800; height: 92px; justify-content: center; width: 92px; }
+        .profile-mark { background: #e7f0f8; border: 1px solid #c9dcec; border-radius: 50%; height: 92px; object-fit: cover; object-position: center 48%; width: 92px; }
         .sidebar .brand { color: var(--ink); font-family: Arial, sans-serif; font-size: 1.35rem; letter-spacing: 0; margin: .35rem 0 0; }
         .sidebar .brand span { color: var(--muted); font-size: .88rem; font-weight: 400; line-height: 1.4; }
         .profile-links { display: grid; font-family: Arial, sans-serif; font-size: .85rem; gap: .45rem; margin: .5rem 0; }
@@ -366,7 +366,7 @@
 <body class="homepage is-preload">
     <div id="page-wrapper">
         <aside class="sidebar" aria-label="Primary navigation">
-            <div class="profile-mark" aria-hidden="true">PP</div>
+            <img class="profile-mark" src="images/poonam-pawar.jpg" alt="Poonam Pawar">
             <p class="brand">Poonam Pawar<span>Software Engineer</span></p>
             <div class="profile-links">
                 <a href="mailto:poonamrp3@gmail.com">Email</a>
