@@ -164,7 +164,7 @@
             font-weight: 400;
             list-style-type: disc;
             color: var(--muted, #5f6368);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             line-height: 1.6;
         }
         .experience ul li {
@@ -207,12 +207,12 @@
             padding: 0;
             margin-left: 20px;
             color: var(--muted, #5f6368);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             line-height: 1.6;
         }
         .edu p {
             color: var(--muted, #5f6368);
-            font-size: 1.05rem;
+            font-size: 1.15rem;
             line-height: 1.6;
             margin: 5px 0;
         }
@@ -292,7 +292,7 @@
         #logo, #logo a { color: var(--ink); font-size: clamp(2.8rem, 7vw, 5.5rem); letter-spacing: -.06em; line-height: .95; }
         #logo a::after { color: var(--plum); content: "."; }
         .eyebrow { color: var(--plum); font-size: 1.1rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-        .hero-copy { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.7; max-width: 46rem; }
+        .hero-copy { color: var(--muted); font-size: clamp(0.95rem, 2vw, 1.15rem); line-height: 1.7; max-width: 46rem; }
         .social-links { display: flex; gap: .5rem; margin-top: .5rem; }
         .social-links a { background: #fff; border: 1px solid var(--line); border-radius: .75rem; margin: 0; padding: .55rem; }
         .social-links img { height: 26px; width: 26px; }
@@ -314,7 +314,7 @@
         .project-card { border: 1px solid var(--line); box-shadow: none; display: flex; flex-direction: column; margin: 0; padding: 1.5rem; }
         .project-card:hover { border-color: #bca8eb; box-shadow: 0 16px 35px rgba(67, 20, 141, .09); transform: translateY(-4px); }
         .project-card h3 { color: var(--ink); font-size: 1.25rem; }
-        .project-card ul { color: var(--muted); font-size: 1.1rem; line-height: 1.55; margin: 0; padding-left: 1.15rem; }
+        .project-card ul { color: var(--muted); font-size: 1.0rem; line-height: 1.55; margin: 0; padding-left: 1.15rem; }
         .project-card .view-resume { margin-top: auto; }
         #contacts { background: #f6f3fa; }
         #contacts a { color: var(--plum); }
@@ -347,7 +347,7 @@
         #logo, #logo a { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.25rem, 4.5vw, 3.35rem); font-weight: 400; letter-spacing: -.035em; }
         #logo a::after { display: none; }
         .eyebrow { color: var(--muted); font-family: Arial, sans-serif; font-size: 1.1rem; font-weight: 500; letter-spacing: .05em; }
-        .hero-copy { color: #343434; font-size: 1.08rem; line-height: 1.75; max-width: 720px; }
+        .hero-copy { color: #343434; font-size: 0.98rem; line-height: 1.75; max-width: 720px; }
         .social-links { gap: .85rem; }
         .social-links a { background: transparent; border: 0; border-radius: 0; padding: 0; }
         .social-links img { height: 23px; width: 23px; }
@@ -362,7 +362,7 @@
         #projects > .container:last-child { display: block; }
         .project-card { border: 0; border-radius: 0; border-top: 1px solid var(--line); box-shadow: none; display: block; padding: 1.5rem 0; }
         .project-card:hover { border-color: var(--line); box-shadow: none; transform: none; }
-        .project-card ul { font-size: 1.15rem; }
+        .project-card ul { font-size: 1.05rem; }
         .project-card .view-resume { margin-top: 1rem; }
         #contacts { border-top: 1px solid var(--line); }
         @media (max-width: 800px) {
@@ -583,7 +583,7 @@
                       <div id="content-agentic" class="project-tab-content active">
                           <div class="project-card">
                               <h3>Autonomous Agentic Commerce Scraper</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">A highly concurrent, AI-driven web scraping pipeline that autonomously navigates complex e-commerce sites, dynamically bypassing brittle CSS selectors.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">A highly concurrent, AI-driven web scraping pipeline that autonomously navigates complex e-commerce sites, dynamically bypassing brittle CSS selectors.</p>
                               <ul>
                                   <li><strong>Architecture:</strong> Architected a highly concurrent, agentic web scraping pipeline using <strong>LangGraph</strong> and <strong>Python asyncio</strong> to autonomously navigate <strong>30+ complex e-commerce sites</strong> to fetch targeted data.</li>
                                   <li><strong>Performance:</strong> Engineered a <strong>4-agent ReAct</strong> state machine that utilizes LLMs to analyze DOM structures and execute optimal navigation routes, reducing total data extraction time by <strong>54.4% (2.2x speedup)</strong> over sequential processing.</li>
@@ -593,7 +593,7 @@
 
                           <div class="project-card">
                               <h3>Autonomous Financial Audit & Processing Agent</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">An end-to-end multi-agent invoice processing pipeline automating unstructured data extraction, inventory validation, and executive approvals.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">An end-to-end multi-agent invoice processing pipeline automating unstructured data extraction, inventory validation, and executive approvals.</p>
                               <ul>
                                   <li><strong>Pipeline Automation:</strong> Architected a <strong>4-stage</strong>, end-to-end multi-agent invoice processing pipeline using Python and LangGraph, mitigating an estimated <strong>$2M/year</strong> in manual processing leakage.</li>
                                   <li><strong>Discrepancy Resolution:</strong> Engineered a stateful, <strong>6-turn</strong> adversarial LLM reflection loop simulating a Finance VP and Supplier negotiation to autonomously resolve invoice discrepancies exceeding the <strong>$10,000 corporate scrutiny threshold</strong>, enforcing strict compliance.</li>
@@ -606,7 +606,7 @@
                       <div id="content-cloud" class="project-tab-content">
                           <div class="project-card">
                               <h3>Which Celebrity Do You Look Like?</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">A serverless web application that processes user images to identify celebrity look-alikes using AWS AI services.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">A serverless web application that processes user images to identify celebrity look-alikes using AWS AI services.</p>
                               <ul>
                                   <li><strong>Core Application:</strong> Built a Vue.js frontend hosted on <strong>AWS Amplify</strong>, enabling users to upload images and receive <strong>5 celebrity look-alike results</strong> using Amazon Rekognition.</li>
                                   <li><strong>Serverless Infrastructure:</strong> Implemented a backend using <strong>AWS Lambda, API Gateway, S3, and DynamoDB</strong> for seamless image processing, storage, and real-time result retrieval.</li>
@@ -623,7 +623,7 @@
                       <div id="content-ml" class="project-tab-content">
                           <div class="project-card">
                               <h3>Neural Network Training Using Particle Swarm Optimization <span style="font-size:0.9rem; font-weight:normal; color:#555;">(MS CS Capstone Project)</span></h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">An investigation into Particle Swarm Optimization (PSO) as a non-gradient-based alternative to Adam and SGD for neural network training.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">An investigation into Particle Swarm Optimization (PSO) as a non-gradient-based alternative to Adam and SGD for neural network training.</p>
                               <ul>
                                   <li><strong>Optimization Evaluation:</strong> Evaluated PSO performance across <strong>7 diverse datasets</strong> with varying complexity from <strong>4 to 3072 features</strong>, demonstrating its ability to overcome local minima entrapment.</li>
                                   <li><strong>Performance Impact:</strong> Achieved significant loss reductions including <strong>24.6% on the Digits dataset</strong> and <strong>65% on CIFAR-10</strong>, with accuracy improvements reaching up to <strong>3.2%</strong>.</li>
@@ -637,7 +637,7 @@
 
                           <div class="project-card">
                               <h3>OPEN-UNMIX - Music Separation by PyTorch</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">Performance benchmarking and hyperparameter optimization of the Open-Unmix model for music source separation.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">Performance benchmarking and hyperparameter optimization of the Open-Unmix model for music source separation.</p>
                               <ul>
                                   <li><strong>Performance Benchmarking:</strong> Demonstrated that the Open-Unmix model with a larger batch size of <strong>16</strong> and hidden size of <strong>512</strong> had a higher loss of <strong>11.2</strong>, compared to a smaller batch size of <strong>4</strong> and hidden size of <strong>256</strong>, which achieved a lower loss of <strong>8.55</strong>.</li>
                                   <li><strong>Optimization:</strong> Analysis indicated that a hidden size of <strong>256</strong> was optimal for processing <strong>16KHz signals</strong>, as increasing hidden size beyond this point led to decreased performance due to overfitting.</li>
@@ -650,7 +650,7 @@
 
                           <div class="project-card">
                               <h3>HYB-PARSIMONY Study</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">Implementation of Hybrid-Parsimony, Genetic Algorithms, and PSO for parsimonious feature selection models.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">Implementation of Hybrid-Parsimony, Genetic Algorithms, and PSO for parsimonious feature selection models.</p>
                               <ul>
                                   <li><strong>Hybrid Algorithm:</strong> The Hybrid Algorithm achieved an accuracy of <strong>80% to 100%</strong>, selecting only <strong>63.8%</strong> of the original features across all datasets.</li>
                                   <li><strong>Dimensionality Reduction:</strong> Represented a reduction of <strong>36.2%</strong> in feature dimensionality, with a <strong>29% rate</strong> of artificial features being chosen.</li>
@@ -663,7 +663,7 @@
                       <div id="content-data" class="project-tab-content">
                           <div class="project-card">
                               <h3>AnimeDB Insights</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">Database normalization and ETL pipeline development processing an 80M-record dataset.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">Database normalization and ETL pipeline development processing an 80M-record dataset.</p>
                               <ul>
                                   <li><strong>Data Pipeline:</strong> Led database normalization and ETL pipeline development for an <strong>80M-record anime dataset</strong>, achieving <strong>20% average data quality improvement</strong> through systematic detection of duplicates.</li>
                                   <li><strong>Data Cleaning:</strong> Engineered data cleaning protocols resulting in refined datasets with <strong>29.8% improvement in user records</strong> and <strong>20.9% in user-anime interactions</strong> via the IQR outlier detection algorithm.</li>
@@ -677,7 +677,7 @@
 
                           <div class="project-card">
                               <h3>Market Basket Analysis</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">A global retail data analysis project focused on frequent pattern mining and knowledge representation.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">A global retail data analysis project focused on frequent pattern mining and knowledge representation.</p>
                               <ul>
                                   <li><strong>Pattern Mining:</strong> Uncovered significant data patterns analyzing <strong>1,000+ rows</strong> of cross-country data, revealing contrasts such as <strong>142 patterns in Norway vs. 2 in the UK</strong>.</li>
                                   <li><strong>Graph Database:</strong> Designed and implemented a <strong>Neo4j graph database</strong> solution, utilizing <strong>Cypher queries</strong> to enhance data analysis capabilities and scalability.</li>
@@ -693,7 +693,7 @@
                       <div id="content-xml" class="project-tab-content">
                           <div class="project-card">
                               <h3>Movie Showtimes XML Pipeline</h3>
-                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 1.05rem;">A multi-file XML data processing system to model, validate, and visualize showtimes for movies across theaters.</p>
+                              <p style="font-style: italic; color: #555; margin-bottom: 10px; font-size: 0.95rem;">A multi-file XML data processing system to model, validate, and visualize showtimes for movies across theaters.</p>
                               <ul>
                                   <li><strong>Data Integrity:</strong> Engineered a multi-file XML data processing system using custom <strong>DTD and W3C-compliant XSD schemas</strong> to enforce <strong>100% data integrity</strong> and semantic validation for complex attributes.</li>
                                   <li><strong>Dynamic Filtering:</strong> Utilized <strong>XPath queries within XSLT</strong> to dynamically extract and filter nested movie data, significantly reducing the need for manual HTML formatting.</li>
