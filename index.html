@@ -1,0 +1,661 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <title>Home - My Portfolio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="description" content="Portfolio of Poonam Pawar, a software engineer specializing in full-stack development, cloud systems, and machine learning." />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 200px;
+            height: 100%;
+            background-color: #3d159a; /* Dodger Blue */
+            padding-top: 200px;
+            z-index: 1000; /* Ensures the sidebar stays above other elements */
+        }
+
+        .sidebar a {
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 18px;
+            color: white;
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background-color: #3d159a; 
+        }
+
+        .content {
+            margin-left: 210px; /* Adjust according to the width of the sidebar */
+            padding: 0; /* Remove padding to eliminate the gap */
+        }
+
+        section {
+            margin: 20px 0; /* Add vertical margin to separate sections */
+            padding: 20px; /* Add padding inside each section */
+        }
+
+        section#header {
+            margin-top: 0; /* Ensure there's no top margin on the header */
+        }
+
+        /* Clear floating elements */
+        .row::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        #header {
+            background-color: #eee;
+            padding: 20px 0;
+            height: 100vh;
+        }
+        
+        #logo {
+            font-size: 2em;
+            margin: 0;
+            color: #3d159a; /* Dodger Blue */
+        }
+
+        #logo a {
+            text-decoration: none;
+            color: #3d159a; /* Dodger Blue */
+        }
+
+        #logo a:hover {
+            color: #2e0c74; /* Darker Dodger Blue for hover */
+        }    
+        
+        .social-links {
+            margin-top: 10px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        
+        .social-links img {
+            width: 40px;  /* Adjust size as needed */
+            height: 40px; /* Adjust size as needed */
+            transition: transform 0.3s ease;
+        }
+        
+        .social-links img:hover {
+            transform: scale(1.1);
+        }        
+        /* CSS for View Resume Button */
+        .view-resume {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px; /* Adjust as needed */
+        }
+
+        .view-resume .btn {
+            padding: 10px 20px;
+            background-color: #3d159a; /* Dodger Blue */
+            color: white; /* Button text color */
+            text-decoration: none; /* Remove underline */
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .view-resume .btn:hover {
+            background-color: #2e0c74; /* Darker Dodger Blue */
+        }
+
+        /*experience section*/
+        #experience {
+            min-height: 400px;
+            background-color: #fff;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        .container.experience {
+            padding-bottom: 20px; /* Adds space at the bottom */
+        }        
+        .exp {
+            margin-bottom: 40px; /* Increased margin for better spacing */
+            position: relative; /* Position relative for dot positioning */
+            padding-left: 40px; /* Create space for dot and line */
+        }
+        .dot {
+            position: absolute;
+            top: 0;
+            left: -15px; /* Adjust position of the dot */
+            width: 10px; /* Diameter of the dot */
+            height: 10px; /* Diameter of the dot */
+            background-color: #3d159a; /* Dodger Blue */
+            border-radius: 50%; /* Rounded shape for dot */
+            z-index: 1; /* Ensure dot appears above the line */
+        }
+        .line {
+            position: absolute;
+            top: 0;
+            left: -10px; /* Adjust position of the line */
+            width: 2px; /* Width of the line */
+            height: 100%; /* Height of the line (full height of the experience section) */
+            background-color: #3d159a; /* Dodger Blue */
+            z-index: 0; /* Ensure line appears behind dots */
+        }
+        .experience h3 {
+            margin-top: 0;
+            color: #3d159a; /* Dodger Blue */
+        }
+        .experience .date {
+            font-weight: bold;
+            color: #555; /* Color of the date range */
+            margin-bottom: 10px;
+        }
+        .experience .position {
+            font-weight: bold;
+            color: #555; /* Color of the date range */
+            margin-bottom: 10px;
+        }
+        .experience ul {
+            padding: 0;
+            margin-left: 20px; /* Adjust indentation of list items */
+            font-weight: 500;
+            list-style-type: disc;
+        }
+        .experience ul li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        /*Education Section */
+        #education {
+            height: 100vh;
+            background: #eee;
+        }
+        .edu {
+            margin-bottom: 40px; /* Increased margin for better spacing */
+            position: relative; /* Position relative for dot positioning */
+            padding-left: 40px; /* Create space for dot and line */
+        }
+        .edu h3 {
+            margin-top: 0;
+            color: #3d159a; /* Dodger Blue */
+        }
+
+        .edu .date {
+            font-weight: bold;
+            margin-bottom: 10px;
+            position: absolute;
+            top: 50%; /* Aligns it vertically with the middle of the container */
+            transform: translateY(-50%); /* Ensures exact vertical alignment */
+            font-size: 16px; /* Optional: Adjust font size if needed */
+            color: #3d159a !important; /* Adjust color if necessary */
+        }
+
+        .edu .position {
+            font-weight: bold;
+            color: #555; /* Color of the date range */
+            margin-bottom: 10px;
+        }
+        .edu ul {
+            list-style-type: none;
+            padding: 0;
+            margin-left: 20px; /* Adjust indentation of list items */
+        }
+        .edu ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 50px 20px;
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+        .project-card {
+            border: 1px solid #181818; /* Subtle border */
+            border-radius: 12px; /* Rounded corners */
+            background-color: #ffffff; /* White background */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow */
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s; /* Smooth animations */
+            font-weight: 500;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px); /* Lift on hover */
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15); /* Stronger shadow on hover */
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #3d159a; /* Dodger Blue */
+        }
+
+        .projects ul {
+            padding: 0;
+            margin-left: 20px; /* Adjust indentation of list items */
+            font-weight: 500;
+            list-style-type: disc;
+        }
+        .projects ul li {
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto; /* Center content */
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+
+        /*Contacts Section */
+        #contacts {
+            height: 100vh;
+        }
+
+        /* Modern portfolio refresh */
+        :root { --ink: #151122; --muted: #635d70; --paper: #fcfbff; --plum: #5b21b6; --violet: #7c3aed; --line: #e7e1ee; }
+        html { scroll-behavior: smooth; }
+        body { background: var(--paper); color: var(--ink); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+        .sidebar { box-sizing: border-box; display: flex; flex-direction: column; gap: 1.5rem; width: 248px; padding: 2.25rem 1.5rem; background: #1d1233; }
+        .sidebar .brand { color: #fff; font-size: 1.15rem; font-weight: 800; letter-spacing: .02em; margin: 0 0 .5rem; }
+        .sidebar .brand span { color: #c4b5fd; display: block; font-size: .78rem; font-weight: 500; margin-top: .35rem; }
+        .sidebar nav { display: grid; gap: .35rem; }
+        .sidebar a { border-radius: .5rem; color: #ddd6fe; font-size: .8rem; font-weight: 700; letter-spacing: .08em; padding: .75rem .85rem; text-transform: uppercase; }
+        .sidebar a:hover, .sidebar a:focus-visible { background: rgba(255,255,255,.12); color: #fff; outline: 0; }
+        .menu-toggle { display: none; }
+        .content { margin-left: 248px; padding: 0; }
+        section { box-sizing: border-box; margin: 0; padding: 5.5rem clamp(1.5rem, 5vw, 5rem); }
+        #header, #education, #contacts { height: auto; min-height: 0; }
+        #header { background: linear-gradient(135deg, #f5f0ff 0%, #fff 62%); display: grid; min-height: min(700px, 100vh); place-items: center; }
+        #header .container { align-items: flex-start; gap: 1.5rem; max-width: 900px; width: 100%; }
+        #logo, #logo a { color: var(--ink); font-size: clamp(2.8rem, 7vw, 5.5rem); letter-spacing: -.06em; line-height: .95; }
+        #logo a::after { color: var(--plum); content: "."; }
+        .eyebrow { color: var(--plum); font-size: .78rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+        .hero-copy { color: var(--muted); font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.7; max-width: 46rem; }
+        .social-links { display: flex; gap: .5rem; margin-top: .5rem; }
+        .social-links a { background: #fff; border: 1px solid var(--line); border-radius: .75rem; margin: 0; padding: .55rem; }
+        .social-links img { height: 26px; width: 26px; }
+        .view-resume { justify-content: flex-start; margin-top: 1rem; }
+        .view-resume .btn { background: var(--plum); border-radius: .6rem; font-weight: 750; padding: .85rem 1.15rem; }
+        .view-resume .btn:hover { background: #43148d; }
+        #experience { background: #fff; }
+        .container { gap: 1.75rem; max-width: 1050px; }
+        h2 { color: var(--ink); font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.04em; text-transform: none; }
+        .exp, .edu { border-left: 2px solid #ddd6fe; margin: 0; padding: 0 0 2rem 2rem; }
+        .exp:last-child, .edu:last-child { padding-bottom: 0; }
+        .exp .dot, .edu .dot { left: -6px; top: .4rem; }
+        .exp .line, .edu .line { display: none; }
+        .experience h3, .edu h3 { color: var(--ink); font-size: 1.25rem; }
+        .experience .date, .edu .date { color: var(--plum) !important; float: none; font-size: .9rem; position: static; transform: none; }
+        #education { background: #f6f3fa; }
+        #projects { background: #fff !important; }
+        #projects > .container:last-child { display: grid; gap: 1.25rem; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+        .project-card { border: 1px solid var(--line); box-shadow: none; display: flex; flex-direction: column; margin: 0; padding: 1.5rem; }
+        .project-card:hover { border-color: #bca8eb; box-shadow: 0 16px 35px rgba(67, 20, 141, .09); transform: translateY(-4px); }
+        .project-card h3 { color: var(--ink); font-size: 1.25rem; }
+        .project-card ul { color: var(--muted); font-size: .95rem; line-height: 1.55; margin: 0; padding-left: 1.15rem; }
+        .project-card .view-resume { margin-top: auto; }
+        #contacts { background: #f6f3fa; }
+        #contacts a { color: var(--plum); }
+        @media (max-width: 800px) {
+            .sidebar { align-items: center; flex-direction: row; height: 64px; justify-content: space-between; padding: .75rem 1rem; position: fixed; width: 100%; z-index: 10002; }
+            .sidebar .brand { font-size: 1rem; margin: 0; }.sidebar .brand span { display: none; }
+            .menu-toggle { background: transparent; border: 1px solid rgba(255,255,255,.4); border-radius: .45rem; color: #fff; cursor: pointer; display: block; font-size: 1rem; padding: .38rem .6rem; }
+            .sidebar nav { background: #1d1233; display: none; left: 0; padding: 1rem; position: absolute; right: 0; top: 64px; }.sidebar.is-open nav { display: grid; }
+            .content { margin-left: 0; padding-top: 64px; } section { padding: 3.5rem 1.25rem; }
+            #header { min-height: calc(100vh - 64px); }
+        }
+
+        /* Profile-style layout: concise, text-first, and easy to scan. */
+        :root { --ink: #252525; --muted: #5f6368; --paper: #fff; --plum: #1769aa; --line: #e5e7eb; }
+        body { background: var(--paper); color: var(--ink); font-family: Georgia, "Times New Roman", serif; }
+        .sidebar { background: #fafafa; border-right: 1px solid var(--line); box-shadow: none; gap: 1.1rem; padding: 3rem 2rem; width: 300px; }
+        .profile-mark { background: #e7f0f8; border: 1px solid #c9dcec; border-radius: 50%; height: 185px; object-fit: cover; object-position: center 48%; width: 185px; }
+        .sidebar .brand { color: var(--ink); font-family: Arial, sans-serif; font-size: 1.35rem; letter-spacing: 0; margin: .35rem 0 0; }
+        .sidebar .brand span { color: var(--muted); font-size: .88rem; font-weight: 400; line-height: 1.4; }
+        .profile-links { display: grid; font-family: Arial, sans-serif; font-size: .85rem; gap: .45rem; margin: .5rem 0; }
+        .profile-links a { color: var(--plum); padding: 0; text-transform: none; letter-spacing: 0; }
+        .profile-links a:hover, .profile-links a:focus-visible { background: transparent; color: #0d4f83; text-decoration: underline; }
+        .sidebar nav { border-top: 1px solid var(--line); gap: 0; padding-top: .8rem; }
+        .sidebar nav a { border-radius: 0; color: #444; font-family: Arial, sans-serif; font-size: .78rem; font-weight: 600; padding: .55rem 0; }
+        .sidebar nav a:hover, .sidebar nav a:focus-visible { background: transparent; color: var(--plum); }
+        .content { margin-left: 300px; }
+        section { padding: 2.6rem clamp(2rem, 6vw, 5.5rem); }
+        #header { background: #fff; display: block; min-height: 0; padding-top: 4.5rem; }
+        #header .container { max-width: 820px; }
+        #logo, #logo a { font-family: Georgia, "Times New Roman", serif; font-size: clamp(2.25rem, 4.5vw, 3.35rem); font-weight: 400; letter-spacing: -.035em; }
+        #logo a::after { display: none; }
+        .eyebrow { color: var(--muted); font-family: Arial, sans-serif; font-size: .78rem; font-weight: 500; letter-spacing: .05em; }
+        .hero-copy { color: #343434; font-size: 1.08rem; line-height: 1.75; max-width: 720px; }
+        .social-links { gap: .85rem; }
+        .social-links a { background: transparent; border: 0; border-radius: 0; padding: 0; }
+        .social-links img { height: 23px; width: 23px; }
+        .view-resume .btn { background: transparent; border: 1px solid #a8c6df; border-radius: .2rem; color: var(--plum); font-family: Arial, sans-serif; font-size: .85rem; padding: .6rem .85rem; }
+        .view-resume .btn:hover { background: #edf5fb; }
+        h2 { color: #202020; font-family: Georgia, "Times New Roman", serif; font-size: 1.7rem; font-weight: 400; letter-spacing: -.01em; text-transform: none; }
+        #experience, #education, #projects, #contacts { background: #fff !important; color: var(--ink); }
+        .exp, .edu { border-left: 0; border-top: 1px solid var(--line); padding: 1.35rem 0; }
+        .exp .dot, .edu .dot, .exp .line, .edu .line { display: none; }
+        .experience h3, .edu h3, .project-card h3 { color: #222; font-family: Arial, sans-serif; font-size: 1rem; font-weight: 700; }
+        .experience .date, .edu .date { color: var(--muted) !important; font-family: Arial, sans-serif; }
+        #projects > .container:last-child { display: block; }
+        .project-card { border: 0; border-radius: 0; border-top: 1px solid var(--line); box-shadow: none; display: block; padding: 1.5rem 0; }
+        .project-card:hover { border-color: var(--line); box-shadow: none; transform: none; }
+        .project-card ul { font-size: 1rem; }
+        .project-card .view-resume { margin-top: 1rem; }
+        #contacts { border-top: 1px solid var(--line); }
+        @media (max-width: 800px) {
+            .sidebar { background: #fff; border-bottom: 1px solid var(--line); border-right: 0; padding: .75rem 1rem; width: 100%; }
+            .profile-mark, .profile-links { display: none; }
+            .sidebar .brand { font-size: 1rem; }.sidebar .brand span { display: none; }
+            .sidebar nav { background: #fff; border-top: 1px solid var(--line); padding: .75rem 1rem; }
+            .sidebar nav a { padding: .5rem 0; }.content { margin-left: 0; }
+            section { padding: 2.5rem 1.4rem; } #header { padding-top: 3rem; }
+        }
+    </style>
+</head>
+<body class="homepage is-preload">
+    <div id="page-wrapper">
+        <aside class="sidebar" aria-label="Primary navigation">
+            <img class="profile-mark" src="images/poonam-pawar.jpg" alt="Poonam Pawar">
+            <p class="brand">Poonam Pawar<span>Software Engineer</span></p>
+            <div class="profile-links">
+                <a href="mailto:poonamrp3@gmail.com">Email</a>
+                <a href="https://www.linkedin.com/in/prp3/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/poonamrp3" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+            <nav id="site-nav">
+                <a href="#header">Introduction</a>
+                <a href="#experience">Experience</a>
+                <a href="#education">Education</a>
+                <a href="#projects">Projects</a>
+                <a href="#contacts">Contact</a>
+            </nav>
+        </aside>
+
+        <!-- Content -->
+        <div class="content">
+            <!-- Introduction -->
+            <section id="header">
+                <div class="container">
+                    <h1 id="logo"><a href="index.html">Poonam Pawar</a></h1>
+                    <p class="hero-copy">I build reliable, user-centered software—from polished web experiences to cloud-native data and machine-learning systems. My work spans full-stack engineering, AWS, data platforms, and applied machine learning.</p>
+                    <!-- Social Media Links -->
+                    <div class="social-links">
+                        <a href="https://github.com/poonamrp3" target="_blank" rel="noopener noreferrer">
+                            <img src="images/Github.png" alt="GitHub">
+                        </a>
+                        <a href="https://www.linkedin.com/in/prp3/" target="_blank" rel="noopener noreferrer">
+                            <img src="images/linkedin.png" alt="LinkedIn">
+                        </a>
+                    </div>
+                    <!-- Button for View Resume -->
+                    <div class="view-resume">
+                        <a href="https://drive.google.com/file/d/1Weq9Nlsk97Wu91sBB2Hh00cmXoyaVjae/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Resume</a>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Experience -->
+            <section id="experience">
+                <div class="container experience">
+                    <h2>Professional Experience</h2>
+                    <div class="exp">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>CrowdDoing <span class="date text-right">&nbsp;&nbsp;&nbsp;Aug 2025 – July 2026</span></h3>
+                        <h4 class="position"><strong>Software Engineer</strong></h4>
+                        <ul>
+                            <li><strong>Architected Autonomous AI Agent System:</strong> Engineered an autonomous role-recommendation AI agent using Python, JavaScript, and OpenWebUI, automating the parsing and triage of 1,000+ monthly volunteer applications across 20+ functional teams.</li>
+                            <li><strong>Designed 3-Stage Prompt-Chained Pipeline:</strong> Built modular ML inference pipelines on Amazon Bedrock using prompt-chaining—decoupling candidate extraction into strict JSON schemas, dynamic knowledge retrieval from internal catalogues, and explainable match-ranking to eliminate context loss and token bloat.</li>
+                            <li><strong>Implemented Secure API Tooling:</strong> Integrated Microsoft Graph APIs to automate Outlook communication streams, engineering ephemeral session management to maintain secure authentication boundaries between the tool server and LLM agents.</li>
+                            <li><strong>Engineered Containerized Cloud Deployment:</strong> Containerized microservices using Docker and established scalable, serverless container orchestration on AWS ECS (Fargate) and AWS ECR, eliminating local machine bottlenecks and ensuring high-availability serving.</li>
+                            <li><strong>Optimized Infrastructure &amp; Operational Costs:</strong> Transitioned local Ollama development workloads to a managed hybrid cloud architecture with Amazon Bedrock, ensuring predictable latency and low-overhead scaling under strict organizational budget constraints.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>Cex Webuy Entertainment Pvt. Ltd, India <span class="date text-right">&nbsp;&nbsp;&nbsp;Feb 2022 – Dec 2022</span></h3>
+                        <h4 class="position"><strong>Software Engineer</strong></h4>
+                        <ul>
+                            <li>Led the frontend migration from ReactJS to VueJS with seamless integration through system analysis, improving performance.</li>
+                            <li>Designed and implemented RESTful APIs using the repository pattern, optimizing user experience across 385+ retail store interfaces.</li>
+                            <li>Enhanced system reliability by developing test cases in VS Code, achieving 10% increased test coverage.</li>
+                            <li>Optimized software release workflows by streamlining the deployment process through CI/CD with Jenkins.</li>
+                            <li>Refined a modular system at CEX, separating business domains with clean interfaces and domain-driven design, improving maintainability by 40%.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>Accenture, India <span class="date text-right">&nbsp;&nbsp;&nbsp;Sep 2021 – Feb 2022</span></h3>
+                        <h4 class="position"><strong>Application Development Analyst</strong></h4>
+                        <ul>
+                            <li>Managed incidents and resolved technical inquiries via ServiceNow, improving support processes and incident resolution efficiency.</li>
+                            <li>Analyzed system and request flows, collaborating with cross-functional teams to identify root causes of issues in different environments.</li>
+                        </ul>
+                    </div>
+
+                    <div class="exp">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>Pi Techniques Pvt Ltd, India <span class="date text-right">&nbsp;&nbsp;&nbsp;Jul 2019 – Sep 2021</span></h3>
+                        <h4 class="position"><strong>Software Developer</strong></h4>
+                        <ul>
+                            <li>Contributed to MVC architecture by refactoring C# codebase application using SOLID principles and optimizing Entity Framework queries to reduce server processing overhead by 15%.</li>
+                            <li>Conducted comprehensive data review on legacy systems using SQL queries, analyzing system requirements to resolve data inconsistencies that improved data integrity by 10%.</li>
+                            <li>Implemented asynchronous JavaScript Fetch APIs to enable responsive client-server communication, implementing client-side validation and caching strategies that reduced server round-trips by 30% and improved perceived load times by 25%.</li>
+                            <li>Managed project workflows and contributed to sprint planning using Jira while authoring comprehensive technical documentation encompassing system architecture, business requirements, implementation challenges, and project scope.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </section>
+            
+            <!-- Education -->
+            <section id="education">
+                <div class="container education">
+                    <h2>Education</h2>
+                    <div class="edu">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>Rochester Institute of Technology, Rochester, NY, USA </h3>
+                        <p class="date">Jan 2023 - May 2025</p>
+                        <h4><strong>Master of Science in Computer Science</strong></h4>
+                        <p></p>
+                        <p style="font-weight:500">Coursework: Foundation of Algorithms, Introduction to Big Data, 
+                            Cloud Software Systems, Introduction to Artificial Intelligence, 
+                            Introduction to Machine Learning, Big Data Analytics, 
+                            Bio Inspired Intelligent Systems</p>
+                    </div>
+                    <div class="edu">
+                        <span class="dot"></span>
+                        <span class="line"></span>
+                        <h3>University of Mumbai, India</h3>
+                        <p class="date">2016 - 2019</p>
+                        <h4><strong>Bachelor of Science in Information Technology</strong></h4>
+                    </div>
+                </div>
+            </section>
+
+            <section id="projects" style="background-color: #ffffff;">
+                <header class="container">
+                    <h2>Projects</h2>
+                </header>
+                <div class="container">
+                    <div class="project-card">
+                        <h3>Autonomous Agentic Commerce Scraper</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, Playwright, LLMs, asyncio</strong></li>
+                            <li>Architected a highly concurrent, agentic web scraping pipeline using LangGraph and Python asyncio to autonomously navigate 30+ complex e-commerce sites to fetch targeted data, dynamically bypassing brittle CSS selectors.</li>
+                            <li>Engineered a 4-agent ReAct state machine that utilizes LLMs to analyze DOM structures and execute optimal navigation routes, reducing total data extraction time by 54.4% (2.2x speedup) over sequential processing.</li>
+                            <li>Implemented robust anti-bot measures (Playwright stealth, rotating proxies) and aggressive network request interception, reducing proxy bandwidth costs while maintaining resilience against transient connection and API failures.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Autonomous Financial Audit & Processing Agent</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, LLMs, Pydantic, SQLite</strong></li>
+                            <li>Architected a 4-stage, end-to-end multi-agent invoice processing pipeline using Python and LangGraph, automating unstructured data extraction, inventory validation, and executive approvals to mitigate an estimated $2M/year in manual processing leakage.</li>
+                            <li>Engineered a stateful, 6-turn adversarial LLM reflection loop simulating a Finance VP and Supplier negotiation to autonomously resolve invoice discrepancies exceeding the $10,000 corporate scrutiny threshold, enforcing strict compliance against local SQLite databases.</li>
+                            <li>Implemented a dual-engine orchestrator supporting both deterministic sequential data flows and decoupled LangGraph state machines, leveraging Pydantic to enforce 100% strict JSON schema compliance on unstructured document extractions.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Which Celebrity Do You Look Like?</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp; AWS, Python, Amazon S3, Vue JS (JavaScript Framework)</strong></li>
+                            <li>Built a Vue.js frontend hosted on AWS Amplify, enabling users to upload images and receive 5 celebrity look-alike results using Amazon Rekognition for facial recognition.</li>
+                            <li>Implemented a serverless backend using AWS Lambda, API Gateway, S3, and DynamoDB for seamless image processing, storage, and real-time result retrieval.</li>
+                            <li>Created a Rekognition Collection to index and compare 160+ celebrity images, utilizing the `search_faces_by_image` API to retrieve top 5 matches with high accuracy.</li>
+                            <li>Leveraged AWS S3 for cost-efficient storage of user-uploaded and celebrity images, and DynamoDB for semi-structured storage of facial recognition results, ensuring efficient handling of dynamic data.</li>  
+                            <li>Configured IAM roles for secure communication between services and used CloudWatch for monitoring, logging, and debugging, ensuring robust performance and scalability.</li>
+                            <li>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</li>
+                        </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/1aqB5B2ORWPux8-P2YX31ZvV6N0JGPF1p/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <h3>Neural Network Training Using Particle Swarm Optimization</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
+                            <li>Investigated the effectiveness of Particle Swarm Optimization (PSO) as a non-gradient-based alternative to traditional optimization methods like Adam and SGD for neural network training, demonstrating PSO's ability to overcome gradient-based limitations such as local minima entrapment and computational plateaus in complex optimization landscapes.</li>
+                            <li>Evaluated PSO performance across 7 diverse datasets spanning tabular data (Iris, Wine, Digits, Breast Cancer, Spam Base) and image datasets (MNIST, CIFAR-10) with varying complexity from 4-3072 features, achieving significant loss reductions including 24.6% on Digits dataset and 65% on CIFAR-10, with accuracy improvements reaching up to 3.2% while maintaining model generalization capabilities.</li>
+                            <li>Evaluated hybrid PSO-GA across all 7 datasets, achieving loss reductions of 77.7% on Digits, 99.9% on Breast Cancer, and 73.7% on Wine, with accuracy improvements ranging from 1.0% to 95.3% compared to standalone PSO performance.</li>
+                            <li>Addressed key challenges in neural network optimization including computational inefficiency of grid/random search and susceptibility to local minima in gradient-based approaches.</li>
+                            <li>Demonstrated PSO's capability to navigate complex, high-dimensional search spaces for both structural parameters (neuron counts) and non-structural parameters (weights and biases).</li>
+                        </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/13iwZmsG7PGxZmn42g5xtxI0_MoF7U7b0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>AnimeDB Insights</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;SQL, PostgreSQL, MongoDB, ETL, Python, Pandas, Big Data Analytics</strong></li>
+                            <li>Led database normalization and ETL pipeline development for an 80M-record anime dataset using Python Pandas and SQL, achieving 20% average data quality improvement through systematic detection and removal of duplicates, null values, and outliers.</li>
+                            <li>Engineered data cleaning protocols in Python to optimize dataset quality, resulting in refined datasets with 29.8% improvement in user records, 20.9% in user-anime interactions, and 12% in anime listings through IQR outlier detection algorithm.</li>
+                            <li>Designed and implemented MongoDB document models for optimized data relationships, integrating referential integrity constraints and functional dependencies to achieve Third Normal Form in a NoSQL environment.</li>
+                            <li>Applied frequent itemset mining algorithm (Apriori) using Python to analyze viewing patterns and content trends, uncovering critical business insights including the identification that 25.72% of anime content consisted of original creations.</li>
+                        </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/1GfSIo-XwDrPbVi0BZTeF1kS7z20ULngp/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                        </div>
+                    </div>
+                                            
+                    <div class="project-card">
+                        <h3>OPEN-UNMIX - Music Separation by PyTorch</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
+                            <li>Performance benchmarking of Open-Unmix demonstrated that increasing batch size and hidden size does not always reduce loss or accelerate training.</li>
+                            <li>The Open-Unmix model with a larger batch size of 16 and hidden size of 512 had a higher loss of 11.2, compared to Open-Unmix2 with a smaller batch size of 4 and hidden size of 256, which achieved a lower loss of 8.55.</li>
+                            <li>Analysis indicated that a hidden size of 256 was optimal for processing 16KHz signals in the Open-Unmix model. Increasing hidden size beyond this point led to decreased performance due to overfitting, as the model began to capture very subtle frequency patterns.</li>
+                        </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                        </div>
+                    </div>
+
+
+                    <div class="project-card">
+                        <h3>HYB-PARSIMONY Study</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
+                            <li>Successfully implemented and optimized Genetic Algorithm (GA), Particle Swarm Optimization (PSO), and Hybrid-Parsimony algorithms for parsimonious feature selection models, introducing synthetic features to rigorously evaluate the algorithms' capacity to distinguish between relevant original features and irrelevant artificial variables.</li>
+                            <li>The Hybrid Algorithm achieved an accuracy of 80% to 100%, selecting only 63.8% of the original features across all datasets. This represents a reduction of about 36.2% in feature dimensionality, with 29% of artificial features being chosen. </li>
+                            <li>The Genetic Algorithm maintained an accuracy of 86% to 87%, selecting only 47% of the original features, with a 28% rate of artificial features chosen.</li>
+                        </ul>
+                    </div>
+
+                    <div class="project-card">
+                        <h3>Market Basket Analysis</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;Python, Big Data Analytics, Neo4j, Pandas</strong></li>
+                            <li>Led data preprocessing in python and transformation initiatives, implementing one-hot encoding techniques to optimize data for frequent pattern mining analysis.</li>
+                            <li>Uncovered significant data patterns through frequent itemset mining, analyzing 1,000+ rows of cross-country data, revealing contrasts in pattern frequency (142 patterns in Norway vs. 2 in UK from similar data volumes).</li>
+                            <li>Designed and implemented a Neo4j graph database solution for knowledge representation, utilizing Cypher queries to enhance data analysis capabilities and scalability.</li>
+                        </ul>
+                        <div class="view-resume">
+                            <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>Movie Showtimes XML Pipeline</h3>
+                        <ul>
+                            <li><strong>Skills&nbsp;:&nbsp;XML, XSLT, XPath, HTML, CSS</strong></li>
+                            <li>Engineered a multi-file XML data processing system to model, validate, and visualize showtimes for movies across theaters, using custom DTD and W3C-compliant XSD schema to enforce data integrity and semantic validation for complex attributes like format types, accessibility options, and screening features.</li>
+                            <li>Utilized XPath queries within XSLT to dynamically extract and filter nested movie data by format and features, significantly reducing the need for manual HTML formatting.</li>
+                            <li>Ensured 100% validation across both schema and XML through iterative testing with tools like XML Validator and FreeFormatter, supporting robust, scalable XML data modeling.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Footer -->
+            <section id="contacts">
+                <div class="container">
+                    <header>
+                        <h2>Questions or comments? <strong>Get in touch:</strong></h2>
+                    </header>
+                    <div class="row">
+                            <section>
+                                <div style="font-weight:bold" class="row">
+                                    <div>
+                                        <ul class="icons">
+                                            <li class="icon solid fa-home">
+                                                Mumbai, India
+                                            </li>
+                                            <li class="icon solid fa-phone">
+                                                +91 9594629523
+                                            </li>
+                                            <li class="icon solid fa-envelope">
+                                                <a href="mailto:poonamrp3@gmail.com">poonamrp3@gmail.com</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </section>   
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        const sidebar = document.querySelector('.sidebar');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        menuToggle.addEventListener('click', () => {
+            const isOpen = sidebar.classList.toggle('is-open');
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        });
+
+        document.querySelectorAll('#site-nav a').forEach((link) => {
+            link.addEventListener('click', () => {
+                sidebar.classList.remove('is-open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
+    
+
+</body>
+</html>
