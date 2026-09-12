@@ -361,6 +361,67 @@
             .sidebar nav a { padding: .5rem 0; }.content { margin-left: 0; }
             section { padding: 2.5rem 1.4rem; } #header { padding-top: 3rem; }
         }
+
+        /* Project Tabs */
+        .project-tabs-container {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        .project-sidebar {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+        .project-tab {
+            background: transparent;
+            border: 1px solid var(--line, #e5e7eb);
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ink, #252525);
+            cursor: pointer;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            font-family: Arial, sans-serif;
+        }
+        .project-tab:hover {
+            border-color: #3d159a;
+            color: #3d159a;
+        }
+        .project-tab.active {
+            background-color: #3d159a;
+            color: #ffffff;
+            border-color: #3d159a;
+        }
+        .project-content-area {
+            flex-grow: 1;
+        }
+        .project-tab-content {
+            display: none;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .project-tab-content.active {
+            display: flex;
+        }
+        @media (max-width: 800px) {
+            .project-tabs-container {
+                flex-direction: column;
+            }
+            .project-sidebar {
+                width: 100%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .project-tab {
+                flex: 1 1 calc(50% - 10px);
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body class="homepage is-preload">
@@ -491,120 +552,150 @@
                 </div>
             </section>
 
-            <section id="projects" style="background-color: #ffffff;">
+                        <section id="projects" style="background-color: #ffffff;">
                 <header class="container">
                     <h2>Projects</h2>
                 </header>
-                <div class="container">
-                    <div class="project-card">
-                        <h3>Autonomous Agentic Commerce Scraper</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, Playwright, LLMs, asyncio</strong></li>
-                            <li>Architected a highly concurrent, agentic web scraping pipeline using LangGraph and Python asyncio to autonomously navigate 30+ complex e-commerce sites to fetch targeted data, dynamically bypassing brittle CSS selectors.</li>
-                            <li>Engineered a 4-agent ReAct state machine that utilizes LLMs to analyze DOM structures and execute optimal navigation routes, reducing total data extraction time by 54.4% (2.2x speedup) over sequential processing.</li>
-                            <li>Implemented robust anti-bot measures (Playwright stealth, rotating proxies) and aggressive network request interception, reducing proxy bandwidth costs while maintaining resilience against transient connection and API failures.</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Autonomous Financial Audit & Processing Agent</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, LLMs, Pydantic, SQLite</strong></li>
-                            <li>Architected a 4-stage, end-to-end multi-agent invoice processing pipeline using Python and LangGraph, automating unstructured data extraction, inventory validation, and executive approvals to mitigate an estimated $2M/year in manual processing leakage.</li>
-                            <li>Engineered a stateful, 6-turn adversarial LLM reflection loop simulating a Finance VP and Supplier negotiation to autonomously resolve invoice discrepancies exceeding the $10,000 corporate scrutiny threshold, enforcing strict compliance against local SQLite databases.</li>
-                            <li>Implemented a dual-engine orchestrator supporting both deterministic sequential data flows and decoupled LangGraph state machines, leveraging Pydantic to enforce 100% strict JSON schema compliance on unstructured document extractions.</li>
-                        </ul>
-                    </div>
-
-                    <div class="project-card">
-                        <h3>Which Celebrity Do You Look Like?</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp; AWS, Python, Amazon S3, Vue JS (JavaScript Framework)</strong></li>
-                            <li>Built a Vue.js frontend hosted on AWS Amplify, enabling users to upload images and receive 5 celebrity look-alike results using Amazon Rekognition for facial recognition.</li>
-                            <li>Implemented a serverless backend using AWS Lambda, API Gateway, S3, and DynamoDB for seamless image processing, storage, and real-time result retrieval.</li>
-                            <li>Created a Rekognition Collection to index and compare 160+ celebrity images, utilizing the `search_faces_by_image` API to retrieve top 5 matches with high accuracy.</li>
-                            <li>Leveraged AWS S3 for cost-efficient storage of user-uploaded and celebrity images, and DynamoDB for semi-structured storage of facial recognition results, ensuring efficient handling of dynamic data.</li>  
-                            <li>Configured IAM roles for secure communication between services and used CloudWatch for monitoring, logging, and debugging, ensuring robust performance and scalability.</li>
-                            <li>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</li>
-                        </ul>
-                        <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1aqB5B2ORWPux8-P2YX31ZvV6N0JGPF1p/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <h3>Neural Network Training Using Particle Swarm Optimization</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
-                            <li>Investigated the effectiveness of Particle Swarm Optimization (PSO) as a non-gradient-based alternative to traditional optimization methods like Adam and SGD for neural network training, demonstrating PSO's ability to overcome gradient-based limitations such as local minima entrapment and computational plateaus in complex optimization landscapes.</li>
-                            <li>Evaluated PSO performance across 7 diverse datasets spanning tabular data (Iris, Wine, Digits, Breast Cancer, Spam Base) and image datasets (MNIST, CIFAR-10) with varying complexity from 4-3072 features, achieving significant loss reductions including 24.6% on Digits dataset and 65% on CIFAR-10, with accuracy improvements reaching up to 3.2% while maintaining model generalization capabilities.</li>
-                            <li>Evaluated hybrid PSO-GA across all 7 datasets, achieving loss reductions of 77.7% on Digits, 99.9% on Breast Cancer, and 73.7% on Wine, with accuracy improvements ranging from 1.0% to 95.3% compared to standalone PSO performance.</li>
-                            <li>Addressed key challenges in neural network optimization including computational inefficiency of grid/random search and susceptibility to local minima in gradient-based approaches.</li>
-                            <li>Demonstrated PSO's capability to navigate complex, high-dimensional search spaces for both structural parameters (neuron counts) and non-structural parameters (weights and biases).</li>
-                        </ul>
-                        <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/13iwZmsG7PGxZmn42g5xtxI0_MoF7U7b0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
-                        </div>
-                    </div>
+                <div class="container project-tabs-container">
                     
-                    <div class="project-card">
-                        <h3>AnimeDB Insights</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;SQL, PostgreSQL, MongoDB, ETL, Python, Pandas, Big Data Analytics</strong></li>
-                            <li>Led database normalization and ETL pipeline development for an 80M-record anime dataset using Python Pandas and SQL, achieving 20% average data quality improvement through systematic detection and removal of duplicates, null values, and outliers.</li>
-                            <li>Engineered data cleaning protocols in Python to optimize dataset quality, resulting in refined datasets with 29.8% improvement in user records, 20.9% in user-anime interactions, and 12% in anime listings through IQR outlier detection algorithm.</li>
-                            <li>Designed and implemented MongoDB document models for optimized data relationships, integrating referential integrity constraints and functional dependencies to achieve Third Normal Form in a NoSQL environment.</li>
-                            <li>Applied frequent itemset mining algorithm (Apriori) using Python to analyze viewing patterns and content trends, uncovering critical business insights including the identification that 25.72% of anime content consisted of original creations.</li>
-                        </ul>
-                        <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1GfSIo-XwDrPbVi0BZTeF1kS7z20ULngp/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
-                        </div>
-                    </div>
-                                            
-                    <div class="project-card">
-                        <h3>OPEN-UNMIX - Music Separation by PyTorch</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
-                            <li>Performance benchmarking of Open-Unmix demonstrated that increasing batch size and hidden size does not always reduce loss or accelerate training.</li>
-                            <li>The Open-Unmix model with a larger batch size of 16 and hidden size of 512 had a higher loss of 11.2, compared to Open-Unmix2 with a smaller batch size of 4 and hidden size of 256, which achieved a lower loss of 8.55.</li>
-                            <li>Analysis indicated that a hidden size of 256 was optimal for processing 16KHz signals in the Open-Unmix model. Increasing hidden size beyond this point led to decreased performance due to overfitting, as the model began to capture very subtle frequency patterns.</li>
-                        </ul>
-                        <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
-                        </div>
+                    <!-- Sidebar / Tabs -->
+                    <div class="project-sidebar">
+                      <button onclick="switchProjectTab('agentic')" id="tab-agentic" class="project-tab active">Agentic Engineering</button>
+                      <button onclick="switchProjectTab('cloud')" id="tab-cloud" class="project-tab">Cloud / AWS</button>
+                      <button onclick="switchProjectTab('ml')" id="tab-ml" class="project-tab">Machine Learning</button>
+                      <button onclick="switchProjectTab('data')" id="tab-data" class="project-tab">Big Data</button>
+                      <button onclick="switchProjectTab('xml')" id="tab-xml" class="project-tab">XML Pipeline</button>
                     </div>
 
+                    <!-- Content Area -->
+                    <div class="project-content-area">
+                      
+                      <!-- Agentic -->
+                      <div id="content-agentic" class="project-tab-content active">
+                          <div class="project-card">
+                              <h3>Autonomous Agentic Commerce Scraper</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, PyTorch, LLMs</strong></li>
+                                  <li>Architected a highly concurrent, agentic web scraping pipeline using LangGraph and Python asyncio to autonomously navigate 30+ complex e-commerce sites to fetch targeted data, dynamically bypassing brittle CSS selectors.</li>
+                                  <li>Engineered a 4-agent ReAct state machine that utilizes LLMs to analyze DOM structures and execute optimal navigation routes, reducing total data extraction time by 54.4% (2.2x speedup) over sequential processing.</li>
+                                  <li>Implemented robust anti-bot measures (Playwright stealth, rotating proxies) and aggressive network request interception, reducing proxy bandwidth costs while maintaining resilience against transient connection and API failures.</li>
+                              </ul>
+                          </div>
 
-                    <div class="project-card">
-                        <h3>HYB-PARSIMONY Study</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
-                            <li>Successfully implemented and optimized Genetic Algorithm (GA), Particle Swarm Optimization (PSO), and Hybrid-Parsimony algorithms for parsimonious feature selection models, introducing synthetic features to rigorously evaluate the algorithms' capacity to distinguish between relevant original features and irrelevant artificial variables.</li>
-                            <li>The Hybrid Algorithm achieved an accuracy of 80% to 100%, selecting only 63.8% of the original features across all datasets. This represents a reduction of about 36.2% in feature dimensionality, with 29% of artificial features being chosen. </li>
-                            <li>The Genetic Algorithm maintained an accuracy of 86% to 87%, selecting only 47% of the original features, with a 28% rate of artificial features chosen.</li>
-                        </ul>
-                    </div>
+                          <div class="project-card">
+                              <h3>Autonomous Financial Audit & Processing Agent</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp; Python, LangGraph, LLMs, PyTorch, Scripting</strong></li>
+                                  <li>Architected a 4-stage, end-to-end multi-agent invoice processing pipeline using Python and LangGraph, automating unstructured data extraction, inventory validation, and executive approvals to mitigate an estimated $2M/year in manual processing leakage.</li>
+                                  <li>Engineered a stateful, 6-turn adversarial LLM reflection loop simulating a Finance VP and Supplier negotiation to autonomously resolve invoice discrepancies exceeding the $10,000 corporate scrutiny threshold, enforcing strict compliance against local SQLite databases.</li>
+                                  <li>Implemented a dual-engine orchestrator supporting both deterministic sequential data flows and decoupled LangGraph state machines, leveraging Pydantic to enforce 100% strict JSON schema compliance on unstructured document extractions.</li>
+                              </ul>
+                          </div>
+                      </div>
 
-                    <div class="project-card">
-                        <h3>Market Basket Analysis</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;Python, Big Data Analytics, Neo4j, Pandas</strong></li>
-                            <li>Led data preprocessing in python and transformation initiatives, implementing one-hot encoding techniques to optimize data for frequent pattern mining analysis.</li>
-                            <li>Uncovered significant data patterns through frequent itemset mining, analyzing 1,000+ rows of cross-country data, revealing contrasts in pattern frequency (142 patterns in Norway vs. 2 in UK from similar data volumes).</li>
-                            <li>Designed and implemented a Neo4j graph database solution for knowledge representation, utilizing Cypher queries to enhance data analysis capabilities and scalability.</li>
-                        </ul>
-                        <div class="view-resume">
-                            <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card">
-                        <h3>Movie Showtimes XML Pipeline</h3>
-                        <ul>
-                            <li><strong>Skills&nbsp;:&nbsp;XML, XSLT, XPath, HTML, CSS</strong></li>
-                            <li>Engineered a multi-file XML data processing system to model, validate, and visualize showtimes for movies across theaters, using custom DTD and W3C-compliant XSD schema to enforce data integrity and semantic validation for complex attributes like format types, accessibility options, and screening features.</li>
-                            <li>Utilized XPath queries within XSLT to dynamically extract and filter nested movie data by format and features, significantly reducing the need for manual HTML formatting.</li>
-                            <li>Ensured 100% validation across both schema and XML through iterative testing with tools like XML Validator and FreeFormatter, supporting robust, scalable XML data modeling.</li>
-                        </ul>
+                      <!-- Cloud -->
+                      <div id="content-cloud" class="project-tab-content">
+                          <div class="project-card">
+                              <h3>Which Celebrity Do You Look Like?</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp; AWS, Python, Amazon S3, Vue JS (JavaScript Framework)</strong></li>
+                                  <li>Built a Vue.js frontend hosted on AWS Amplify, enabling users to upload images and receive 5 celebrity look-alike results using Amazon Rekognition for facial recognition.</li>
+                                  <li>Implemented a serverless backend using AWS Lambda, API Gateway, S3, and DynamoDB for seamless image processing, storage, and real-time result retrieval.</li>
+                                  <li>Created a Rekognition Collection to index and compare 160+ celebrity images, utilizing the `search_faces_by_image` API to retrieve top 5 matches with high accuracy.</li>
+                                  <li>Leveraged AWS S3 for cost-efficient storage of user-uploaded and celebrity images, and DynamoDB for semi-structured storage of facial recognition results, ensuring efficient handling of dynamic data.</li>  
+                                  <li>Configured IAM roles for secure communication between services and used CloudWatch for monitoring, logging, and debugging, ensuring robust performance and scalability.</li>
+                                  <li>Orchestrated a comprehensive Terraform configuration for all services, facilitating seamless deployment across diverse environments.</li>
+                              </ul>
+                              <div class="view-resume">
+                                  <a href="https://drive.google.com/file/d/1aqB5B2ORWPux8-P2YX31ZvV6N0JGPF1p/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Machine Learning -->
+                      <div id="content-ml" class="project-tab-content">
+                          <div class="project-card">
+                              <h3>Neural Network Training Using Particle Swarm Optimization</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;Python, PyTorch, Optuna</strong></li>
+                                  <li>Investigated the effectiveness of Particle Swarm Optimization (PSO) as a non-gradient-based alternative to traditional optimization methods like Adam and SGD for neural network training, demonstrating PSO's ability to overcome gradient-based limitations such as local minima entrapment and computational plateaus in complex optimization landscapes.</li>
+                                  <li>Evaluated PSO performance across 7 diverse datasets spanning tabular data (Iris, Wine, Digits, Breast Cancer, Spam Base) and image datasets (MNIST, CIFAR-10) with varying complexity from 4-3072 features, achieving significant loss reductions including 24.6% on Digits dataset and 65% on CIFAR-10, with accuracy improvements reaching up to 3.2% while maintaining model generalization capabilities.</li>
+                                  <li>Evaluated hybrid PSO-GA across all 7 datasets, achieving loss reductions of 77.7% on Digits, 99.9% on Breast Cancer, and 73.7% on Wine, with accuracy improvements ranging from 1.0% to 95.3% compared to standalone PSO performance.</li>
+                                  <li>Addressed key challenges in neural network optimization including computational inefficiency of grid/random search and susceptibility to local minima in gradient-based approaches.</li>
+                                  <li>Demonstrated PSO's capability to navigate complex, high-dimensional search spaces for both structural parameters (neuron counts) and non-structural parameters (weights and biases).</li>
+                              </ul>
+                              <div class="view-resume">
+                                  <a href="https://drive.google.com/file/d/13iwZmsG7PGxZmn42g5xtxI0_MoF7U7b0/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                              </div>
+                          </div>
+
+                          <div class="project-card">
+                              <h3>OPEN-UNMIX - Music Separation by PyTorch</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python, PyTorch</strong></li>
+                                  <li>Performance benchmarking of Open-Unmix demonstrated that increasing batch size and hidden size does not always reduce loss or accelerate training.</li>
+                                  <li>The Open-Unmix model with a larger batch size of 16 and hidden size of 512 had a higher loss of 11.2, compared to Open-Unmix2 with a smaller batch size of 4 and hidden size of 256, which achieved a lower loss of 8.55.</li>
+                                  <li>Analysis indicated that a hidden size of 256 was optimal for processing 16KHz signals in the Open-Unmix model. Increasing hidden size beyond this point led to decreased performance due to overfitting, as the model began to capture very subtle frequency patterns.</li>
+                              </ul>
+                              <div class="view-resume">
+                                  <a href="https://drive.google.com/file/d/10YMQ8jHTc_ylgs2kBGQwpODHmNtq97oH/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                              </div>
+                          </div>
+
+                          <div class="project-card">
+                              <h3>HYB-PARSIMONY Study</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;Machine Learning, Python</strong></li>
+                                  <li>Successfully implemented and optimized Genetic Algorithm (GA), Particle Swarm Optimization (PSO), and Hybrid-Parsimony algorithms for parsimonious feature selection models, introducing synthetic features to rigorously evaluate the algorithms' capacity to distinguish between relevant original features and irrelevant artificial variables.</li>
+                                  <li>The Hybrid Algorithm achieved an accuracy of 80% to 100%, selecting only 63.8% of the original features across all datasets. This represents a reduction of about 36.2% in feature dimensionality, with 29% of artificial features being chosen. </li>
+                                  <li>The Genetic Algorithm maintained an accuracy of 86% to 87%, selecting only 47% of the original features, with a 28% rate of artificial features chosen.</li>
+                              </ul>
+                          </div>
+                      </div>
+
+                      <!-- Big Data -->
+                      <div id="content-data" class="project-tab-content">
+                          <div class="project-card">
+                              <h3>AnimeDB Insights</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;SQL, PostgreSQL, MongoDB, ETL, Python, Pandas, Big Data Analytics</strong></li>
+                                  <li>Led database normalization and ETL pipeline development for an 80M-record anime dataset using Python Pandas and SQL, achieving 20% average data quality improvement through systematic detection and removal of duplicates, null values, and outliers.</li>
+                                  <li>Engineered data cleaning protocols in Python to optimize dataset quality, resulting in refined datasets with 29.8% improvement in user records, 20.9% in user-anime interactions, and 12% in anime listings through IQR outlier detection algorithm.</li>
+                                  <li>Designed and implemented MongoDB document models for optimized data relationships, integrating referential integrity constraints and functional dependencies to achieve Third Normal Form in a NoSQL environment.</li>
+                                  <li>Applied frequent itemset mining algorithm (Apriori) using Python to analyze viewing patterns and content trends, uncovering critical business insights including the identification that 25.72% of anime content consisted of original creations.</li>
+                              </ul>
+                              <div class="view-resume">
+                                  <a href="https://drive.google.com/file/d/1GfSIo-XwDrPbVi0BZTeF1kS7z20ULngp/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                              </div>
+                          </div>
+
+                          <div class="project-card">
+                              <h3>Market Basket Analysis</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;Python, Big Data Analytics, Neo4j, Pandas</strong></li>
+                                  <li>Led data preprocessing in python and transformation initiatives, implementing one-hot encoding techniques to optimize data for frequent pattern mining analysis.</li>
+                                  <li>Uncovered significant data patterns through frequent itemset mining, analyzing 1,000+ rows of cross-country data, revealing contrasts in pattern frequency (142 patterns in Norway vs. 2 in UK from similar data volumes).</li>
+                                  <li>Designed and implemented a Neo4j graph database solution for knowledge representation, utilizing Cypher queries to enhance data analysis capabilities and scalability.</li>
+                              </ul>
+                              <div class="view-resume">
+                                  <a href="https://drive.google.com/file/d/1_5dT0i2Nl2_n5xE1D7li5fp5VIm_DqGE/view?usp=share_link" target="_blank" rel="noopener noreferrer" class="btn">View Details</a>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- XML -->
+                      <div id="content-xml" class="project-tab-content">
+                          <div class="project-card">
+                              <h3>Movie Showtimes XML Pipeline</h3>
+                              <ul>
+                                  <li><strong>Skills&nbsp;:&nbsp;XML, XSLT, XPath, HTML, CSS</strong></li>
+                                  <li>Engineered a multi-file XML data processing system to model, validate, and visualize showtimes for movies across theaters, using custom DTD and W3C-compliant XSD schema to enforce data integrity and semantic validation for complex attributes like format types, accessibility options, and screening features.</li>
+                                  <li>Utilized XPath queries within XSLT to dynamically extract and filter nested movie data by format and features, significantly reducing the need for manual HTML formatting.</li>
+                                  <li>Ensured 100% validation across both schema and XML through iterative testing with tools like XML Validator and FreeFormatter, supporting robust, scalable XML data modeling.</li>
+                              </ul>
+                          </div>
+                      </div>
+
                     </div>
                 </div>
             </section>
@@ -657,5 +748,23 @@
     </script>
     
 
+
+    <script>
+        function switchProjectTab(tabId) {
+            // Hide all content
+            document.querySelectorAll('.project-tab-content').forEach(function(el) {
+                el.classList.remove('active');
+            });
+            // Show target content
+            document.getElementById('content-' + tabId).classList.add('active');
+
+            // Deactivate all tabs
+            document.querySelectorAll('.project-tab').forEach(function(el) {
+                el.classList.remove('active');
+            });
+            // Activate clicked tab
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
